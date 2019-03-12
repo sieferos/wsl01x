@@ -1,0 +1,98 @@
+# -*- mode: ruby -*-
+# vi: set ft=ruby :
+
+# /*
+# * Vagrantfile
+# * sieferos: 12/03/2019
+# */
+
+# Vagrantfile API/syntax version. Don't touch unless you know what you're doing!
+VAGRANTFILE_API_VERSION = '2'
+
+# REQUIRED PLUGINS
+required_plugins = %w( vagrant-vbguest vagrant-reload vagrant-sshfs )
+required_plugins.each do |plugin|
+    system "vagrant plugin install #{plugin}" unless Vagrant.has_plugin? plugin
+end
+
+require 'getoptlong'
+
+opts = GetoptLong.new(
+  [ '--box-name', GetoptLong::OPTIONAL_ARGUMENT ],
+  [ '--provision-with', GetoptLong::OPTIONAL_ARGUMENT ]
+)
+
+boxName='xenial00x'
+
+opts.each do |opt, arg|
+  case opt
+    when '--box-name'
+      boxName=arg
+  end
+end
+
+Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
+
+    config.vm.box = 'ubuntu/xenial64'
+
+    # config.ssh.username = "vagrant"
+    # config.ssh.password = "vagrant"
+    # config.ssh.insert_key = false
+    # config.ssh.private_key_path = [ "../../keys/sieferos@logtrust.com.id_rsa" ]
+
+    config.vm.provider :virtualbox do |v|
+        v.name = "#{boxName}"
+        v.memory = 2048
+        # v.memory = 4096
+        v.cpus = 2
+    end
+
+    ### mesg: ttyname failed: Inappropriate ioctl for device
+    config.vm.provision "fix-no-tty", privileged: true, type: "shell" do |s|
+        s.inline = "sed -i 's/^mesg n$/tty -s \&\& mesg n/g' /root/.profile"
+    end
+
+    ### INCLUDE
+    config.vm.provision "include", privileged: true, type: "shell" do |s|
+        s.inline = "mkdir -p /var/tmp/vagrant/provision/ && chown -R vagrant:vagrant /var/tmp/vagrant"
+    end
+    config.vm.provision "file", source: "provision/include.sh", destination: "/var/tmp/vagrant/provision/include.sh"
+    config.vm.provision "include-box-name", privileged: true, type: "shell" do |s|
+        s.args = "#{boxName}"
+        s.inline = "sed -i.bak 's/CUSTOM_BOX_NAME/'$1'/g' /var/tmp/vagrant/provision/include.sh"
+    end
+
+    ### SETUP
+    config.vm.provision "setup", privileged: false, type: "shell", path: "../provision/setup.sh"
+
+    ### REBOOT
+    config.vm.provision :reload
+
+    ### CLEANUP
+    config.vm.provision "cleanup", privileged: false, type: "shell", path: "../provision/cleanup.sh"
+
+    ### UTILS
+    config.vm.provision "utils", privileged: true, type: "shell", path: "provision/utils.sh"
+
+    ### GIT
+    config.vm.provision "git", privileged: false, type: "shell", path: "../provision/git.sh"
+
+    ### sieferos
+    config.vm.provision "sieferos", privileged: true, type: "shell", path: "provision/sieferos.sh"
+
+    ### SHAREDFOLDERS (VAGRANT)
+    ### config.vm.provision "sharedfolders", privileged: false, type: "shell", path: "../provision/sharedfolders.sh"
+
+    ### SHAREDFOLDERS (SSHFS) [ https://github.com/dustymabe/vagrant-sshfs ]
+    # config.vm.synced_folder "#{Dir.home}/#{boxName}", ENV['HOME'],
+    #   ssh_host: "#{boxName}", ssh_username: "sieferos",
+    #   ssh_opts_append: "-o Compression=yes -o CompressionLevel=5",
+    #   # sshfs_opts_append: "-o auto_cache -o cache_timeout=115200",
+    #   sshfs_opts_append: "-o cache=no",
+    #   disabled: false,
+    #   type: "sshfs",
+    #   reverse: true
+
+    ### config.ssh.forward_agent = true
+
+end
