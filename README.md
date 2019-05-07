@@ -164,27 +164,34 @@ for W in OW_eCare DataExtract ; do mkdir -p ${HOME}/Daniel/TNPS/__idx/${W}/ ; do
 ```
 
 ```bash
-cd ${HOME}/Daniel/TNPS/ && for USER_ID in 21006881 ; do
+cd ${HOME}/Daniel/TNPS/ && for USER_ID in 15563076 ; do
 
 cd ${HOME}/Daniel/TNPS/ && for USER_ID in $(cat ${HOME}/Daniel/TNPS/USER_ID.csv) ; do
 printf "USER_ID [ %s ]\n" "${USER_ID}"
 echo 'SELECT
-"Date" AS DATE,
+/* "Date" AS DATE, */
 "userid(ow)(evar39)" AS USER_ID,
-"subsection1(prop1)" AS subsection1,
-"subsection2(prop2)" AS subsection2,
-ifnull("visitorstatus(prop4)", "-null-") AS visitorstatus,
+/* ("subsection1(prop1)" || ":" || "subsection2(prop2)") AS navigation, */
+CASE ifnull("visitorstatus(prop4)", "-null-")
+    WHEN "no logado" THEN "-null-"
+    ELSE ifnull("visitorstatus(prop4)", "-null-")
+END visitorstatus,
 ifnull("clientstatus(prop15)", "-null-") AS clientstatus,
-ifnull("clientdebt(prop18)", "-null-") AS clientdebt,
-ifnull("new/repeat(prop21)", "-null-") AS new_repeat,
+CASE ifnull("clientdebt(prop18)", "-null-")
+    WHEN "no" THEN "-null-"
+    ELSE ifnull("clientdebt(prop18)", "-null-")
+END clientdebt,
+/* ifnull("new/repeat(prop21)", "-null-") AS new_repeat, */
 ifnull("prepaid/postpaid(prop23)", "-null-") AS prepaid_postpaid,
-ifnull("navigationspeed(prop24)", "-null-") AS navigationspeed,
-ifnull("moremegas(prop31)", "-null-") AS moremegas,
-ifnull("servicetype(prop36)", "-null-") AS servicetype,
+CASE
+    WHEN ifnull("navigationspeed(prop24)", "-null-") LIKE "%velocidad%" THEN "True"
+    ELSE "-null-"
+END navigationspeed,
+/* ifnull("moremegas(prop31)", "-null-") AS moremegas, */
 ifnull("purchasedpackages(prop57)", "-null-") AS purchasedpackages,
 ifnull("loginprofile(prop58)", "-null-") AS loginprofile,
 CASE ifnull("errorcause(prop30)", "-null-")
-    WHEN "-null-" THEN "False"
+    WHEN "-null-" THEN "-null-"
     ELSE "True"
 END ERROR
 /* , count() AS C */
@@ -195,26 +202,25 @@ AND DATE LIKE "%November%,%2018%"
 /**/
 AND USER_ID = "'${USER_ID}'"
 GROUP BY
-DATE,
+/* DATE, */
 USER_ID,
-subsection1,
-subsection2,
+/* navigation, */
 "visitorstatus",
 "clientstatus",
 "clientdebt",
-"new_repeat",
+/* "new_repeat", */
 "prepaid_postpaid",
 "navigationspeed",
-"moremegas",
-"servicetype",
+/* "moremegas", */
 "purchasedpackages",
 "loginprofile",
 ERROR
 /* ORDER BY C DESC */
 ;' | sqlite3 -cmd ".headers ON" TNPS.db | iconv -c -f UTF-8 -t ISO-8859-1//IGNORE | csvformat --delimiter "|" --quoting 0 | ~/github/sieferos/wsl01x/scripts/fixdates.pl | tee ${HOME}/Daniel/TNPS/__idx/DataExtract/201811."${USER_ID}".csv
+// sleep 1
 done
 
-csvcut --names DataExtract.201811.21006881.csv
+csvcut --names DataExtract.201811.15563076.csv
 ```
 
 echo 'SELECT DISTINCT "userid(ow)(evar39)" FROM DataExtract;' | sqlite3 TNPS.db | wc
@@ -248,7 +254,8 @@ echo 'SELECT
 CASE ifnull("Verbatim", "-null-")
     WHEN "-null-" THEN "False"
     ELSE "True"
-END VERBATIM
+END VERBATIM,
+ifnull("NPS", "-null-") AS NPS
 /* , count() AS C */
 FROM OW_eCare
 WHERE USER_ID != "-"
@@ -269,24 +276,25 @@ USER_ID,
 "pageName",
 "paginasenlavisita",
 "platform",
-VERBATIM
+VERBATIM,
+NPS
 /* ORDER BY C DESC */
 ;' | sqlite3 -cmd ".headers ON" TNPS.db | csvformat --delimiter "|" --quoting 0 | ~/github/sieferos/wsl01x/scripts/fixdates.pl | tee ${HOME}/Daniel/TNPS/__idx/OW_eCare/201811."${USER_ID}".csv
 done
 
-csvcut --names OW_eCare.201811.21006881.csv
+csvcut --names OW_eCare.201811.15563076.csv
 ```
 
 ```
-csvjoin --no-inference --columns "USER_ID" DataExtract.201811.21006881.csv OW_eCare.201811.21006881.csv | tee DataExtract-OW_eCare.201811.21006881.csv
+csvjoin --no-inference --columns "USER_ID" DataExtract.201811.15563076.csv OW_eCare.201811.15563076.csv | tee DataExtract-OW_eCare.201811.15563076.csv
 
-~/github/sieferos/wsl01x/scripts/csv2xls.pl OW_eCare-DataExtract.201811.21006881.csv OW_eCare-DataExtract.201811.21006881.xls
+~/github/sieferos/wsl01x/scripts/csv2xls.pl OW_eCare-DataExtract.201811.15563076.csv OW_eCare-DataExtract.201811.15563076.xls
 ```
 
 ```bash
 mkdir -p ${HOME}/Daniel/TNPS/__idx/__JOIN__/
 
-cd ${HOME}/Daniel/TNPS/ && for USER_ID in 985589181 ; do
+cd ${HOME}/Daniel/TNPS/ && for USER_ID in 15563076 ; do
 
 cd ${HOME}/Daniel/TNPS/ && for USER_ID in $(cat ${HOME}/Daniel/TNPS/USER_ID.csv) ; do
 printf "USER_ID [ %s ]\n" "${USER_ID}"
@@ -303,4 +311,10 @@ done
 
 ```bash
 cd ${HOME}/Daniel/TNPS/ && csvstack __idx/__JOIN__/201811.* | csvformat --quoting 0 | tee DataExtract-OW_eCare.JOIN.201811.csv && wc DataExtract-OW_eCare.JOIN.201811.csv
+```
+
+```
+PIVOT:clientstatus
+PIVOT:navigation
+PIVOT:clientdebt
 ```
