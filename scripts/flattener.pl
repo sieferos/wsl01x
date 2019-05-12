@@ -72,11 +72,20 @@ foreach my $l (@INDEX) {
     if ($csv->parse($l)) {
         my ($USER_ID, $navigation, $visitorstatus, $clientstatus, $clientdebt, $prepaid_postpaid, $navigationspeed, $purchasedpackages, $loginprofile, $ERROR, $C) = $csv->fields();
 
-        next if ($USER_ID eq "USER_ID");
+        next if ($USER_ID eq 'USER_ID');
 
-        my $KEY = join ($separator, ( $USER_ID, $visitorstatus, $clientstatus, $prepaid_postpaid, $purchasedpackages, $loginprofile ));
+        ### WHEN "no logado" THEN "-null-"
+        next if ($visitorstatus eq NULL);
+        next if ($prepaid_postpaid eq NULL);
+        next if ($purchasedpackages eq NULL);
+        next if ($loginprofile eq NULL);
+
+        $clientdebt = 'True' if ($clientdebt eq 'si');
+
+        my $KEY = join ($separator, ( $USER_ID, $visitorstatus, $prepaid_postpaid, $purchasedpackages, $loginprofile ));
 
         $buffer->{$KEY}->{'navigation'}->{$navigation}++ if ($navigation ne NULL);
+        $buffer->{$KEY}->{'clientstatus'}->{$clientstatus}++ if ($clientstatus ne NULL);
 
         $CNT->{$KEY}++;
 
@@ -92,17 +101,21 @@ foreach my $l (@INDEX) {
 
 # print Dumper($buffer);
 
-my @fixedkeys = qw( USER_ID visitorstatus clientstatus prepaid_postpaid purchasedpackages loginprofile );
+my @fixedkeys = qw( USER_ID visitorstatus prepaid_postpaid purchasedpackages loginprofile );
 my @flattenkeys = qw( clientdebt navigationspeed ERROR );
-my @pivotcols = sort @{$PIVOT->{'navigation'}} if $PIVOT;
+my @pivotcolsN = sort @{$PIVOT->{'navigation'}} if $PIVOT->{'navigation'};
+my @pivotcolsC = sort @{$PIVOT->{'clientstatus'}} if $PIVOT->{'clientstatus'};
 
 # print sprintf ("%s%s%s%s%s%s%s\n",
-print sprintf ("%s%s%s%s%s\n",
+my $HEADER = sprintf ("%s%s%s%s%s%s%s",
   join ($separator, @fixedkeys),
   $separator, join ($separator, @flattenkeys),
-  $separator, join ($separator, @pivotcols),
+  $separator, join ($separator, @pivotcolsN),
+  $separator, join ($separator, @pivotcolsC),
   # $separator, 'C'
 );
+$HEADER =~ s/$separator$//;
+print sprintf ("%s\n", $HEADER);
 
 foreach my $KEY (sort keys %{$buffer}) {
   my @R;
@@ -120,8 +133,11 @@ foreach my $KEY (sort keys %{$buffer}) {
     }
     #
     my @PR;
-    foreach my $p (@pivotcols) {
-        push (@PR, ( defined ($buffer->{$KEY}->{'navigation'}->{$p}) ? '+' : '-' ));
+    foreach my $p (@pivotcolsN) {
+        push (@PR, ( defined ($buffer->{$KEY}->{'navigation'}->{$p}) ? '1' : '0' ));
+    }
+    foreach my $p (@pivotcolsC) {
+        push (@PR, ( defined ($buffer->{$KEY}->{'clientstatus'}->{$p}) ? '1' : '0' ));
     }
     #
     # print sprintf ("%s%s%s%s%s%s%d\n",

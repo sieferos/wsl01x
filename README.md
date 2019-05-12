@@ -151,6 +151,18 @@ ORDER BY USER_ID
 ```
 
 ```bash
+cd ${HOME}/Daniel/TNPS/
+echo 'SELECT DISTINCT
+"Verbatim" AS Verbatim
+FROM OW_eCare
+/**/
+WHERE "CreationDate" LIKE "2018/11/%"
+/**/
+ORDER BY Verbatim
+;' | sqlite3 -cmd ".headers OFF" TNPS.db | tee ${HOME}/Daniel/TNPS/Verbatim.csv
+```
+
+```bash
 for W in OW_eCare DataExtract ; do mkdir -p ${HOME}/Daniel/TNPS/__idx/${W}/ ; done
 ```
 
@@ -164,11 +176,11 @@ for W in OW_eCare DataExtract ; do mkdir -p ${HOME}/Daniel/TNPS/__idx/${W}/ ; do
 ```
 
 ```bash
-cd ${HOME}/Daniel/TNPS/ && for USER_ID in 1973048 ; do
+cd ${HOME}/Daniel/TNPS/ && for USER_ID in 21006881 ; do
 
-cd ${HOME}/Daniel/TNPS/ && for USER_ID in $(cat ${HOME}/Daniel/TNPS/USER_ID.csv) ; do
+cd ${HOME}/Daniel/TNPS/ && for USER_ID in 21006881 ; do
 
-cd ${HOME}/Daniel/TNPS/ && for USER_ID in 1973048 ; do
+cd ${HOME}/Daniel/TNPS/ && for USER_ID in $(sort ${HOME}/Daniel/TNPS/USER_ID.csv) ; do
 printf "USER_ID [ %s ]\n" "${USER_ID}"
 echo 'SELECT
 "userid(ow)(evar39)" AS USER_ID,
@@ -219,7 +231,7 @@ ERROR
 ;' | sqlite3 -cmd ".headers ON" TNPS.db | iconv -c -f UTF-8 -t ISO-8859-1//IGNORE | csvformat --delimiter "|" --quoting 0 | ~/github/sieferos/wsl01x/scripts/fixdates.pl | tee ${HOME}/Daniel/TNPS/__idx/DataExtract/201811."${USER_ID}".csv
 done
 
-csvcut --names DataExtract.201811.1973048.csv
+csvcut --names DataExtract.201811.21006881.csv
 ```
 
 echo 'SELECT DISTINCT "userid(ow)(evar39)" FROM DataExtract;' | sqlite3 TNPS.db | wc
@@ -235,7 +247,7 @@ echo 'SELECT "Date","userid(ow)(evar39)", count() as C FROM DataExtract GROUP BY
 
 
 ```bash
-cd ${HOME}/Daniel/TNPS/ && for USER_ID in $(cat ${HOME}/Daniel/TNPS/USER_ID.csv) ; do
+cd ${HOME}/Daniel/TNPS/ && for USER_ID in $(sort ${HOME}/Daniel/TNPS/USER_ID.csv) ; do
 printf "USER_ID [ %s ]\n" "${USER_ID}"
 echo 'SELECT
 /* "CreationDate" AS DATE, */
@@ -281,19 +293,19 @@ NPS
 ;' | sqlite3 -cmd ".headers ON" TNPS.db | csvformat --delimiter "|" --quoting 0 | ~/github/sieferos/wsl01x/scripts/fixdates.pl | tee ${HOME}/Daniel/TNPS/__idx/OW_eCare/201811."${USER_ID}".csv
 done
 
-csvcut --names OW_eCare.201811.1973048.csv
+csvcut --names OW_eCare.201811.21006881.csv
 ```
 
 ```
-csvjoin --no-inference --columns "USER_ID" DataExtract.201811.1973048.csv OW_eCare.201811.1973048.csv | tee DataExtract-OW_eCare.201811.1973048.csv
+csvjoin --no-inference --columns "USER_ID" DataExtract.201811.21006881.csv OW_eCare.201811.21006881.csv | tee DataExtract-OW_eCare.201811.21006881.csv
 
-~/github/sieferos/wsl01x/scripts/csv2xls.pl OW_eCare-DataExtract.201811.1973048.csv OW_eCare-DataExtract.201811.1973048.xls
+~/github/sieferos/wsl01x/scripts/csv2xls.pl OW_eCare-DataExtract.201811.21006881.csv OW_eCare-DataExtract.201811.21006881.xls
 ```
 
 ```bash
-cd ${HOME}/Daniel/TNPS/ && for USER_ID in $(cat ${HOME}/Daniel/TNPS/USER_ID.csv) ; do
+cd ${HOME}/Daniel/TNPS/ && for USER_ID in 21006881 ; do
 
-cd ${HOME}/Daniel/TNPS/ && for USER_ID in 1973048 ; do
+cd ${HOME}/Daniel/TNPS/ && for USER_ID in $(sort ${HOME}/Daniel/TNPS/USER_ID.csv) ; do
 printf "USER_ID [ %s ]\n" "${USER_ID}"
 DATAEXTRACT="${HOME}/Daniel/TNPS/__idx/DataExtract/201811.${USER_ID}.csv"
 if [[ -e "${DATAEXTRACT}" ]] ; then
@@ -306,10 +318,9 @@ done
 
 ```bash
 mkdir -p ${HOME}/Daniel/TNPS/__idx/__JOIN__/
+cd ${HOME}/Daniel/TNPS/ && for USER_ID in 21006881 ; do
 
-cd ${HOME}/Daniel/TNPS/ && for USER_ID in $(cat ${HOME}/Daniel/TNPS/USER_ID.csv) ; do
-
-cd ${HOME}/Daniel/TNPS/ && for USER_ID in 1973048 ; do
+cd ${HOME}/Daniel/TNPS/ && for USER_ID in $(sort ${HOME}/Daniel/TNPS/USER_ID.csv) ; do
 printf "USER_ID [ %s ]\n" "${USER_ID}"
 OW_ECARE="${HOME}/Daniel/TNPS/__idx/OW_eCare/201811.${USER_ID}.csv"
 # DATAEXTRACT="${HOME}/Daniel/TNPS/__idx/DataExtract/201811.${USER_ID}.csv"
@@ -324,11 +335,5 @@ done
 ```
 
 ```bash
-cd ${HOME}/Daniel/TNPS/ && csvstack __idx/__JOIN__/201811.* | csvformat --quoting 0 | tee DataExtract-OW_eCare.JOIN.201811.csv && wc DataExtract-OW_eCare.JOIN.201811.csv
-```
-
-```
-PIVOT:clientstatus
-PIVOT:navigation
-PIVOT:clientdebt
+cd ${HOME}/Daniel/TNPS/ && csvstack __idx/__JOIN__/201811.* | csvformat --quoting 0 --out-delimiter ';' | tee DataExtract-OW_eCare.JOIN.201811.csv && wc DataExtract-OW_eCare.JOIN.201811.csv
 ```
