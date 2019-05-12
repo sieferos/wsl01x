@@ -7,7 +7,7 @@
 # * cat ${HOME}/Daniel/TNPS/__idx/DataExtract/201811.15563076.csv | ${HOME}/github/sieferos/wsl01x/scripts/flattener.pl 2>&1
 # * cat ${HOME}/Daniel/TNPS/__idx/DataExtract/201811.1973048.csv | ${HOME}/github/sieferos/wsl01x/scripts/flattener.pl 2>&1
 # *
-# * cat ${HOME}/github/sieferos/wsl01x/scripts/cfg/*.cfg ${HOME}/Daniel/TNPS/__idx/DataExtract/201811.1973048.csv | ${HOME}/github/sieferos/wsl01x/scripts/flattener.pl 2>&1
+# * cat ${HOME}/github/sieferos/wsl01x/scripts/cfg/navigation.cfg ${HOME}/Daniel/TNPS/__idx/DataExtract/201811.1973048.csv | ${HOME}/github/sieferos/wsl01x/scripts/flattener.pl 2>&1
 # *
 # */
 
@@ -82,7 +82,7 @@ foreach my $l (@INDEX) {
 
         my $VAL = join ($separator, ( $clientdebt, $navigationspeed, $ERROR ));
 
-        print sprintf ("( @ ) L [ %s ] ( %s )\n", $KEY, $VAL) if (0 and $debug and not $silent);
+        print sprintf ("( @ ) L [ %s ] ( %s )\n", $KEY, $VAL) if (1 and $debug and not $silent);
 
         $buffer->{$KEY}->{'clientdebt'}->{$clientdebt}++ if ($clientdebt ne NULL);
         $buffer->{$KEY}->{'navigationspeed'}->{$navigationspeed}++ if ($navigationspeed ne NULL);
@@ -94,13 +94,14 @@ foreach my $l (@INDEX) {
 
 my @fixedkeys = qw( USER_ID visitorstatus clientstatus prepaid_postpaid purchasedpackages loginprofile );
 my @flattenkeys = qw( clientdebt navigationspeed ERROR );
-my @pivotcols = sort @{$PIVOT->{'navigation'}};
+my @pivotcols = sort @{$PIVOT->{'navigation'}} if $PIVOT;
 
-print sprintf ("%s%s%s%s%s%s%s\n",
+# print sprintf ("%s%s%s%s%s%s%s\n",
+print sprintf ("%s%s%s%s%s\n",
   join ($separator, @fixedkeys),
   $separator, join ($separator, @flattenkeys),
   $separator, join ($separator, @pivotcols),
-  $separator, 'C'
+  # $separator, 'C'
 );
 
 foreach my $KEY (sort keys %{$buffer}) {
@@ -120,13 +121,14 @@ foreach my $KEY (sort keys %{$buffer}) {
     #
     my @PR;
     foreach my $p (@pivotcols) {
-        push (@PR, ( defined ($buffer->{$KEY}->{'navigation'}->{$p}) ? 1 : 0 ));
+        push (@PR, ( defined ($buffer->{$KEY}->{'navigation'}->{$p}) ? '+' : '-' ));
     }
     #
-    print sprintf ("%s%s%s%s%s%s%d\n",
+    # print sprintf ("%s%s%s%s%s%s%d\n",
+    print sprintf ("%s%s%s%s%s\n",
         $KEY,
         $separator, join ($separator, @R),
         $separator, join ($separator, @PR),
-        $separator, $CNT->{$KEY} || 0
+        # $separator, $CNT->{$KEY} || 0
     );
 }
