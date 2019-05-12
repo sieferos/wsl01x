@@ -1,13 +1,10 @@
 #!/usr/bin/env perl -w
 
 # /*
-# * flattener.pl
-# * sieferos: 07/05/2019
+# * pivot.pl
+# * sieferos: 12/05/2019
 # *
-# * cat ${HOME}/Daniel/TNPS/__idx/DataExtract/201811.15563076.csv | ${HOME}/github/sieferos/wsl01x/scripts/flattener.pl 2>&1
-# * cat ${HOME}/Daniel/TNPS/__idx/DataExtract/201811.1973048.csv | ${HOME}/github/sieferos/wsl01x/scripts/flattener.pl 2>&1
-# *
-# * cat ${HOME}/github/sieferos/wsl01x/scripts/cfg/*.cfg ${HOME}/Daniel/TNPS/__idx/DataExtract/201811.1973048.csv | ${HOME}/github/sieferos/wsl01x/scripts/flattener.pl 2>&1
+# * cat ${HOME}/Daniel/TNPS/__idx/DataExtract/201811.1973048.csv | ${HOME}/github/sieferos/wsl01x/scripts/flattener.pl | ${HOME}/github/sieferos/wsl01x/scripts/pivot.pl 2>&1
 # *
 # */
 
@@ -41,7 +38,7 @@ my (@INDEX, $PIVOT);
 foreach my $l (trim (<STDIN>)) {
     next if ($l eq '');
     if (my ($piv, $P) = ($l =~ /^pivot\@([^\[]+)\[([^\]]+)\]/)) {
-        print sprintf ("( @ ) P [ %s ] ( %s )\n", $piv, $P) if (1 and $debug and not $silent);
+        print sprintf ("( @ ) P [ %s ] ( %s )\n", $piv, $P) if (0 and $debug and not $silent);
         push (@{$PIVOT->{$piv}}, $P);
         next;
     }
@@ -70,13 +67,11 @@ my ($buffer, $CNT);
 
 foreach my $l (@INDEX) {
     if ($csv->parse($l)) {
-        my ($USER_ID, $navigation, $visitorstatus, $clientstatus, $clientdebt, $prepaid_postpaid, $navigationspeed, $purchasedpackages, $loginprofile, $ERROR, $C) = $csv->fields();
+        my ($USER_ID, $visitorstatus, $clientstatus, $clientdebt, $prepaid_postpaid, $navigationspeed, $purchasedpackages, $loginprofile, $ERROR, $C) = $csv->fields();
 
         next if ($USER_ID eq "USER_ID");
 
         my $KEY = join ($separator, ( $USER_ID, $visitorstatus, $clientstatus, $prepaid_postpaid, $purchasedpackages, $loginprofile ));
-
-        $buffer->{$KEY}->{'navigation'}->{$navigation}++ if ($navigation ne NULL);
 
         $CNT->{$KEY}++;
 
@@ -92,15 +87,13 @@ foreach my $l (@INDEX) {
 
 # print Dumper($buffer);
 
-my @fixedkeys = qw( USER_ID visitorstatus clientstatus prepaid_postpaid purchasedpackages loginprofile );
 my @flattenkeys = qw( clientdebt navigationspeed ERROR );
-my @pivotcols = sort @{$PIVOT->{'navigation'}};
-
-print sprintf ("%s%s%s%s%s%s%s\n",
-  join ($separator, @fixedkeys),
-  $separator, join ($separator, @flattenkeys),
-  $separator, join ($separator, @pivotcols),
-  $separator, 'C'
+print sprintf ("%s%s%s%s%s\n",
+  'USER_ID,visitorstatus,clientstatus,prepaid_postpaid,purchasedpackages,loginprofile',
+  $separator,
+  join ($separator, @flattenkeys),
+  $separator,
+  'C'
 );
 
 foreach my $KEY (sort keys %{$buffer}) {
@@ -117,16 +110,11 @@ foreach my $KEY (sort keys %{$buffer}) {
         print sprintf ("( @ ) R [ %s: %s ]\n", $W, $r) if (1 and $debug and not $silent);
         push (@R, $r)
     }
-    #
-    my @PR;
-    foreach my $p (@pivotcols) {
-        push (@PR, ( defined ($buffer->{$KEY}->{'navigation'}->{$p}) ? 1 : 0 ));
-    }
-    #
-    print sprintf ("%s%s%s%s%s%s%d\n",
+    print sprintf ("%s%s%s%s%d\n",
         $KEY,
-        $separator, join ($separator, @R),
-        $separator, join ($separator, @PR),
-        $separator, $CNT->{$KEY} || 0
+        $separator,
+        join ($separator, @R),
+        $separator,
+        $CNT->{$KEY} || 0
     );
 }

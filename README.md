@@ -164,13 +164,15 @@ for W in OW_eCare DataExtract ; do mkdir -p ${HOME}/Daniel/TNPS/__idx/${W}/ ; do
 ```
 
 ```bash
-cd ${HOME}/Daniel/TNPS/ && for USER_ID in 15563076 ; do
+cd ${HOME}/Daniel/TNPS/ && for USER_ID in 1973048 ; do
 
 cd ${HOME}/Daniel/TNPS/ && for USER_ID in $(cat ${HOME}/Daniel/TNPS/USER_ID.csv) ; do
+
+cd ${HOME}/Daniel/TNPS/ && for USER_ID in 1973048 ; do
 printf "USER_ID [ %s ]\n" "${USER_ID}"
 echo 'SELECT
 "userid(ow)(evar39)" AS USER_ID,
-/* ("subsection1(prop1)" || ":" || "subsection2(prop2)") AS navigation, */
+ifnull(("subsection1(prop1)" || ":" || "subsection2(prop2)"), "-null-") AS navigation,
 CASE ifnull("visitorstatus(prop4)", "-null-")
     WHEN "no logado" THEN "-null-"
     ELSE ifnull("visitorstatus(prop4)", "-null-")
@@ -202,7 +204,7 @@ AND "Date" LIKE "%November%,%2018%"
 AND USER_ID = "'${USER_ID}'"
 GROUP BY
 USER_ID,
-/* navigation, */
+navigation,
 "visitorstatus",
 "clientstatus",
 "clientdebt",
@@ -217,7 +219,7 @@ ERROR
 ;' | sqlite3 -cmd ".headers ON" TNPS.db | iconv -c -f UTF-8 -t ISO-8859-1//IGNORE | csvformat --delimiter "|" --quoting 0 | ~/github/sieferos/wsl01x/scripts/fixdates.pl | tee ${HOME}/Daniel/TNPS/__idx/DataExtract/201811."${USER_ID}".csv
 done
 
-csvcut --names DataExtract.201811.15563076.csv
+csvcut --names DataExtract.201811.1973048.csv
 ```
 
 echo 'SELECT DISTINCT "userid(ow)(evar39)" FROM DataExtract;' | sqlite3 TNPS.db | wc
@@ -279,24 +281,39 @@ NPS
 ;' | sqlite3 -cmd ".headers ON" TNPS.db | csvformat --delimiter "|" --quoting 0 | ~/github/sieferos/wsl01x/scripts/fixdates.pl | tee ${HOME}/Daniel/TNPS/__idx/OW_eCare/201811."${USER_ID}".csv
 done
 
-csvcut --names OW_eCare.201811.15563076.csv
+csvcut --names OW_eCare.201811.1973048.csv
 ```
 
 ```
-csvjoin --no-inference --columns "USER_ID" DataExtract.201811.15563076.csv OW_eCare.201811.15563076.csv | tee DataExtract-OW_eCare.201811.15563076.csv
+csvjoin --no-inference --columns "USER_ID" DataExtract.201811.1973048.csv OW_eCare.201811.1973048.csv | tee DataExtract-OW_eCare.201811.1973048.csv
 
-~/github/sieferos/wsl01x/scripts/csv2xls.pl OW_eCare-DataExtract.201811.15563076.csv OW_eCare-DataExtract.201811.15563076.xls
+~/github/sieferos/wsl01x/scripts/csv2xls.pl OW_eCare-DataExtract.201811.1973048.csv OW_eCare-DataExtract.201811.1973048.xls
+```
+
+```bash
+cd ${HOME}/Daniel/TNPS/ && for USER_ID in $(cat ${HOME}/Daniel/TNPS/USER_ID.csv) ; do
+
+cd ${HOME}/Daniel/TNPS/ && for USER_ID in 1973048 ; do
+printf "USER_ID [ %s ]\n" "${USER_ID}"
+DATAEXTRACT="${HOME}/Daniel/TNPS/__idx/DataExtract/201811.${USER_ID}.csv"
+if [[ -e "${DATAEXTRACT}" ]] ; then
+  cat "${HOME}/github/sieferos/wsl01x/scripts/cfg/navigation.cfg" "${DATAEXTRACT}" | ${HOME}/github/sieferos/wsl01x/scripts/flattener.pl 2>&1 | tee "${HOME}/Daniel/TNPS/__idx/DataExtract/201811.${USER_ID}.PIVOT.csv"
+else
+  printf "\t(KO) [ D:%s ]\n" "${DATAEXTRACT}"
+fi
+done
 ```
 
 ```bash
 mkdir -p ${HOME}/Daniel/TNPS/__idx/__JOIN__/
 
-cd ${HOME}/Daniel/TNPS/ && for USER_ID in 15563076 ; do
-
 cd ${HOME}/Daniel/TNPS/ && for USER_ID in $(cat ${HOME}/Daniel/TNPS/USER_ID.csv) ; do
+
+cd ${HOME}/Daniel/TNPS/ && for USER_ID in 1973048 ; do
 printf "USER_ID [ %s ]\n" "${USER_ID}"
 OW_ECARE="${HOME}/Daniel/TNPS/__idx/OW_eCare/201811.${USER_ID}.csv"
-DATAEXTRACT="${HOME}/Daniel/TNPS/__idx/DataExtract/201811.${USER_ID}.csv"
+# DATAEXTRACT="${HOME}/Daniel/TNPS/__idx/DataExtract/201811.${USER_ID}.csv"
+DATAEXTRACT="${HOME}/Daniel/TNPS/__idx/DataExtract/201811.${USER_ID}.PIVOT.csv"
 if [[ -e "${OW_ECARE}" && -e "${DATAEXTRACT}" ]] ; then
   # printf "\t(OK) [ O:%s | D:%s ]\n" "${OW_ECARE}" "${DATAEXTRACT}"
   csvjoin --no-inference --columns "USER_ID" "${DATAEXTRACT}" "${OW_ECARE}" | tee "${HOME}/Daniel/TNPS/__idx/__JOIN__/201811.${USER_ID}.csv"

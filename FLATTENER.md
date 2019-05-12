@@ -1,5 +1,5 @@
 ```bash
-mkdir -p ${HOME}/github/sieferos/wsl01x/scripts/flattener/
+mkdir -p ${HOME}/github/sieferos/wsl01x/scripts/cfg/
 ```
 
 ```bash
@@ -11,7 +11,7 @@ FROM DataExtract
 /* WHERE DATE LIKE "%November%,%2018%" */
 /**/
 GROUP BY navigation
-;' | sqlite3 -cmd ".headers OFF" TNPS.db | iconv -c -f UTF-8 -t ISO-8859-1//IGNORE | csvformat --delimiter "|" --quoting 0 | tee ${HOME}/github/sieferos/wsl01x/scripts/flattener/navigation.cfg
+;' | sqlite3 -cmd ".headers OFF" TNPS.db | iconv -c -f UTF-8 -t ISO-8859-1//IGNORE | csvformat --delimiter "|" --quoting 0 | tee ${HOME}/github/sieferos/wsl01x/scripts/cfg/navigation.cfg
 ```
 
 ```bash
@@ -23,37 +23,7 @@ FROM DataExtract
 /* WHERE DATE LIKE "%November%,%2018%" */
 /**/
 GROUP BY clientstatus
-;' | sqlite3 -cmd ".headers OFF" TNPS.db | iconv -c -f UTF-8 -t ISO-8859-1//IGNORE | csvformat --delimiter "|" --quoting 0 | tee ${HOME}/github/sieferos/wsl01x/scripts/flattener/clientstatus.cfg
-```
-
-```bash
-cd ${HOME}/Daniel/TNPS/ && echo '
-SELECT
-CASE ifnull("clientdebt(prop18)", "-null-")
-    WHEN "no" THEN "flatten@clientstatus[" || "-null-" || "]"
-    ELSE "flatten@clientstatus[" || ifnull("clientdebt(prop18)", "-null-") || "]"
-END clientdebt
-FROM DataExtract
-/**/
-/* WHERE DATE LIKE "%November%,%2018%" */
-/**/
-GROUP BY clientdebt
-;' | sqlite3 -cmd ".headers OFF" TNPS.db | iconv -c -f UTF-8 -t ISO-8859-1//IGNORE | csvformat --delimiter "|" --quoting 0 | tee ${HOME}/github/sieferos/wsl01x/scripts/flattener/clientdebt.cfg
-```
-
-```bash
-cd ${HOME}/Daniel/TNPS/ && echo '
-SELECT
-CASE ifnull("errorcause(prop30)", "-null-")
-    WHEN "-null-" THEN "flatten@ERROR[" || "-null-" || "]"
-    ELSE "flatten@ERROR[" || "True" || "]"
-END ERROR
-FROM DataExtract
-/**/
-/* WHERE DATE LIKE "%November%,%2018%" */
-/**/
-GROUP BY ERROR
-;' | sqlite3 -cmd ".headers OFF" TNPS.db | iconv -c -f UTF-8 -t ISO-8859-1//IGNORE | csvformat --delimiter "|" --quoting 0 | tee ${HOME}/github/sieferos/wsl01x/scripts/flattener/ERROR.cfg
+;' | sqlite3 -cmd ".headers OFF" TNPS.db | iconv -c -f UTF-8 -t ISO-8859-1//IGNORE | csvformat --delimiter "|" --quoting 0 | tee ${HOME}/github/sieferos/wsl01x/scripts/cfg/clientstatus.cfg
 ```
 
 ```bash
