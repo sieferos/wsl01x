@@ -309,7 +309,7 @@ cd ${HOME}/Daniel/TNPS/ && for USER_ID in $(sort ${HOME}/Daniel/TNPS/USER_ID.csv
 printf "USER_ID [ %s ]\n" "${USER_ID}"
 DATAEXTRACT="${HOME}/Daniel/TNPS/__idx/DataExtract/201811.${USER_ID}.csv"
 if [[ -e "${DATAEXTRACT}" ]] ; then
-  cat "${HOME}/github/sieferos/wsl01x/scripts/cfg/navigation.cfg" "${DATAEXTRACT}" | ${HOME}/github/sieferos/wsl01x/scripts/flattener.pl 2>&1 | tee "${HOME}/Daniel/TNPS/__idx/DataExtract/201811.${USER_ID}.PIVOT.csv"
+  cat ${HOME}/github/sieferos/wsl01x/scripts/cfg/*.cfg "${DATAEXTRACT}" | ${HOME}/github/sieferos/wsl01x/scripts/flattener.pl 2>&1 | tee "${HOME}/Daniel/TNPS/__idx/DataExtract/201811.${USER_ID}.PIVOT.csv"
 else
   printf "\t(KO) [ D:%s ]\n" "${DATAEXTRACT}"
 fi

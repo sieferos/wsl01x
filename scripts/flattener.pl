@@ -7,7 +7,7 @@
 # * cat ${HOME}/Daniel/TNPS/__idx/DataExtract/201811.15563076.csv | ${HOME}/github/sieferos/wsl01x/scripts/flattener.pl 2>&1
 # * cat ${HOME}/Daniel/TNPS/__idx/DataExtract/201811.1973048.csv | ${HOME}/github/sieferos/wsl01x/scripts/flattener.pl 2>&1
 # *
-# * cat ${HOME}/github/sieferos/wsl01x/scripts/cfg/navigation.cfg ${HOME}/Daniel/TNPS/__idx/DataExtract/201811.1973048.csv | ${HOME}/github/sieferos/wsl01x/scripts/flattener.pl 2>&1
+# * cat ${HOME}/github/sieferos/wsl01x/scripts/cfg/*.cfg ${HOME}/Daniel/TNPS/__idx/DataExtract/201811.1973048.csv | ${HOME}/github/sieferos/wsl01x/scripts/flattener.pl 2>&1
 # *
 # */
 
