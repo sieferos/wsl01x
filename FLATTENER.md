@@ -19,6 +19,8 @@ cd ${HOME}/Daniel/TNPS/ && echo '
 SELECT
 ("pivot@clientstatus[" || ifnull("clientstatus(prop15)", "-null-") || "]") AS clientstatus
 FROM DataExtract
+WHERE "clientstatus(prop15)" NOT LIKE "cod%"
+AND length("clientstatus(prop15)") > 1
 /**/
 /* WHERE DATE LIKE "%November%,%2018%" */
 /**/

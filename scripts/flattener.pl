@@ -40,7 +40,7 @@ my (@INDEX, $PIVOT);
 
 foreach my $l (trim (<STDIN>)) {
     next if ($l eq '');
-    if (my ($piv, $P) = ($l =~ /^pivot\@([^\[]+)\[([^\]]+)\]/)) {
+    if (my ($piv, $P) = ($l =~ /^\"?pivot\@([^\[]+)\[([^\]]+)\]/)) {
         print sprintf ("( @ ) P [ %s ] ( %s )\n", $piv, $P) if (1 and $debug and not $silent);
         push (@{$PIVOT->{$piv}}, $P);
         next;
@@ -81,6 +81,10 @@ foreach my $l (@INDEX) {
         next if ($loginprofile eq NULL);
 
         $clientdebt = 'True' if ($clientdebt eq 'si');
+        # $clientdebt = 'True' if ($clientdebt =~ /new/i);
+        # $clientdebt = 'True' if ($clientdebt =~ /repeat/i);
+
+        $visitorstatus = 'Unknown' if ($visitorstatus =~ /^http/i);
 
         my $KEY = join ($separator, ( $USER_ID, $visitorstatus, $prepaid_postpaid, $purchasedpackages, $loginprofile ));
 

@@ -53,7 +53,7 @@ cd ${HOME}/Daniel/TNPS/
 echo 'CREATE INDEX IDX_ID_CLIENT_PROP39_ ON OW_eCare("ID_Client(prop39)");' | sqlite3 TNPS.db
 echo 'CREATE INDEX IDX_CREATIONDATE ON OW_eCare("CreationDate");' | sqlite3 TNPS.db
 
-echo 'CREATE INDEX IDX_USER_ID__OW___EVAR39_ ON DataExtract("user id (ow) (evar39)");' | sqlite3 TNPS.db
+echo 'CREATE INDEX IDX_USER_ID__OW___EVAR39_ ON DataExtract("userid(ow)(evar39)");' | sqlite3 TNPS.db
 ```
 
 ```bash
@@ -66,17 +66,17 @@ PYTHONIOENCODING=latin csvcut --columns "ID_Client(prop39)","Creation Date","URL
 PYTHONIOENCODING=utf-8 csvcut --names OW-eCare.csv | tee OW-eCare.stats.txt
 PYTHONIOENCODING=utf-8 csvstat OW-eCare.csv | tee -a OW-eCare.stats.txt
 
-PYTHONIOENCODING=utf-8 csvgrep --columns "ID_Client(prop39)" --match "21006881" OW-eCare.csv | tee OW-eCare.21006881.csv
+PYTHONIOENCODING=utf-8 csvgrep --columns "ID_Client(prop39)" --match "64079489" OW-eCare.csv | tee OW-eCare.64079489.csv
 ```
 
 ```bash
 PYTHONIOENCODING=utf-8 csvcut --names ../Comportamiento\ Adobe\ eCare\ -\ WEB/DataExtract_Nov.csv | tee DataExtract_201811.stats.txt
-echo "user id (ow) (evar39)" > DataExtract_201811.U.csv && PYTHONIOENCODING=utf-8 csvcut --columns "user id (ow) (evar39)" ../Comportamiento\ Adobe\ eCare\ -\ WEB/DataExtract_Nov.csv | sort -u >> DataExtract_201811.U.csv
-PYTHONIOENCODING=utf-8 csvgrep --columns "user id (ow) (evar39)" --match "21006881" ../Comportamiento\ Adobe\ eCare\ -\ WEB/DataExtract_Nov.csv | tee DataExtract_201811.csv
+echo "userid(ow)(evar39)" > DataExtract_201811.U.csv && PYTHONIOENCODING=utf-8 csvcut --columns "userid(ow)(evar39)" ../Comportamiento\ Adobe\ eCare\ -\ WEB/DataExtract_Nov.csv | sort -u >> DataExtract_201811.U.csv
+PYTHONIOENCODING=utf-8 csvgrep --columns "userid(ow)(evar39)" --match "64079489" ../Comportamiento\ Adobe\ eCare\ -\ WEB/DataExtract_Nov.csv | tee DataExtract_201811.csv
 PYTHONIOENCODING=utf-8 csvcut --names DataExtract_201811.csv | tee DataExtract_201811.stats.txt
 PYTHONIOENCODING=utf-8 csvstat DataExtract_201811.csv | tee -a DataExtract_201811.stats.txt
 
-PYTHONIOENCODING=utf-8 csvjoin --columns "user id (ow) (evar39)","ID_Client(prop39)" --outer DataExtract_201811.U.csv OW-eCare.csv | tee DataExtract_201811.J.csv
+PYTHONIOENCODING=utf-8 csvjoin --columns "userid(ow)(evar39)","ID_Client(prop39)" --outer DataExtract_201811.U.csv OW-eCare.csv | tee DataExtract_201811.J.csv
 PYTHONIOENCODING=utf-8 csvstat DataExtract_201811.J.csv | tee DataExtract_201811.J.stats.txt
 ```
 
@@ -89,6 +89,8 @@ echo 'SELECT "ID_Client(prop39)" AS ID_CLIENT, "CreationDate" AS D, count() AS C
 
 
 echo 'SELECT ifnull("errorcause(prop30)", "-null-") AS EC, count() AS C FROM DataExtract GROUP BY EC ORDER BY C DESC;' | sqlite3 TNPS.db | more
+
+echo 'SELECT ifnull("visitorstatus(prop4)", "-null-") AS VS, count() AS C FROM DataExtract GROUP BY VS ORDER BY C DESC;' | sqlite3 TNPS.db | more
 
 
 echo 'SELECT "Pages", count() AS C FROM DataExtract WHERE Pages IS NOT NULL GROUP BY "Pages" ORDER BY C DESC;' | sqlite3 TNPS.db | tee Pages.csv | csvstat --no-header-row | tee Pages.stats.txt
@@ -111,11 +113,11 @@ echo 'SELECT "subsection5(prop9)" AS SECTION, count() AS C FROM DataExtract WHER
 ```bash
 cd ${HOME}/Daniel/TNPS/
 
-echo 'SELECT * FROM DataExtract WHERE "userid(ow)(evar39)" = 21006881 ORDER BY Date,"hh:mm(prop54)" DESC;' | sqlite3 -cmd ".headers ON" TNPS.db | csvformat --delimiter "|" --quoting 0 | tee DataExtract.21006881.csv | csvstat | tee DataExtract.21006881.stats.txt
+echo 'SELECT * FROM DataExtract WHERE "userid(ow)(evar39)" = 64079489 ORDER BY Date,"hh:mm(prop54)" DESC;' | sqlite3 -cmd ".headers ON" TNPS.db | csvformat --delimiter "|" --quoting 0 | tee DataExtract.64079489.csv | csvstat | tee DataExtract.64079489.stats.txt
 
 echo 'SELECT OW_eCare.*
 FROM OW_eCare
-WHERE OW_eCare."ID_Client(prop39)" = 21006881
+WHERE OW_eCare."ID_Client(prop39)" = 64079489
 ;' | sqlite3 -cmd ".headers ON" TNPS.db | csvformat --delimiter "|" --quoting 0 | tee OW_eCare.COLUMNS.csv
 
 csvcut --names OW_eCare.COLUMNS.csv
@@ -125,12 +127,12 @@ echo 'SELECT DataExtract.*,OW_eCare."Recommendation"
 FROM OW_eCare
 LEFT JOIN DataExtract
 ON OW_eCare."ID_Client(prop39)" = DataExtract."userid(ow)(evar39)"
-WHERE OW_eCare."ID_Client(prop39)" = 21006881
-;' | sqlite3 -cmd ".headers ON" TNPS.db | csvformat --delimiter "|" --quoting 0 | tee DataExtract.21006881.csv | csvstat | tee DataExtract.21006881.stats.txt
+WHERE OW_eCare."ID_Client(prop39)" = 64079489
+;' | sqlite3 -cmd ".headers ON" TNPS.db | csvformat --delimiter "|" --quoting 0 | tee DataExtract.64079489.csv | csvstat | tee DataExtract.64079489.stats.txt
 
-csvcut --names DataExtract.21006881.csv
+csvcut --names DataExtract.64079489.csv
 
-cat DataExtract.21006881.csv | csvcut --columns "Date","userid(ow)(evar39)","Pages","hh:mm(prop54)"
+cat DataExtract.64079489.csv | csvcut --columns "Date","userid(ow)(evar39)","Pages","hh:mm(prop54)"
 ```
 
 ```
@@ -144,10 +146,10 @@ echo 'SELECT DISTINCT
 FROM OW_eCare
 WHERE USER_ID != "-"
 /**/
-AND "CreationDate" LIKE "2018/11/%"
+AND "CreationDate" LIKE "2019/02/%"
 /**/
 ORDER BY USER_ID
-;' | sqlite3 -cmd ".headers OFF" TNPS.db | tee ${HOME}/Daniel/TNPS/USER_ID.csv
+;' | sqlite3 -cmd ".headers OFF" TNPS.db | tee ${HOME}/Daniel/TNPS/USER_ID.201902.csv
 ```
 
 ```bash
@@ -176,11 +178,18 @@ for W in OW_eCare DataExtract ; do mkdir -p ${HOME}/Daniel/TNPS/__idx/${W}/ ; do
 ```
 
 ```bash
-cd ${HOME}/Daniel/TNPS/ && for USER_ID in 21006881 ; do
+cd ${HOME}/Daniel/TNPS/ && for USER_ID in 64079489 ; do
 
-cd ${HOME}/Daniel/TNPS/ && for USER_ID in 21006881 ; do
+for YYYYMM in \
+201811 \
+201812 \
+201901 \
+201902 \
 
-cd ${HOME}/Daniel/TNPS/ && for USER_ID in $(sort ${HOME}/Daniel/TNPS/USER_ID.csv) ; do
+for YYYYMM in \
+201811 \
+; do
+cd ${HOME}/Daniel/TNPS/ && for USER_ID in $(sort -u ${HOME}/Daniel/TNPS/USER_ID.${YYYYMM}.csv) ; do
 printf "USER_ID [ %s ]\n" "${USER_ID}"
 echo 'SELECT
 "userid(ow)(evar39)" AS USER_ID,
@@ -211,7 +220,7 @@ END ERROR
 FROM DataExtract
 WHERE USER_ID IS NOT NULL AND "Date" IS NOT NULL
 /**/
-AND "Date" LIKE "%November%,%2018%"
+/* AND "Date" LIKE "%November%,%2018%" */
 /**/
 AND USER_ID = "'${USER_ID}'"
 GROUP BY
@@ -228,10 +237,11 @@ navigation,
 "loginprofile",
 ERROR
 /* ORDER BY C DESC */
-;' | sqlite3 -cmd ".headers ON" TNPS.db | iconv -c -f UTF-8 -t ISO-8859-1//IGNORE | csvformat --delimiter "|" --quoting 0 | ~/github/sieferos/wsl01x/scripts/fixdates.pl | tee ${HOME}/Daniel/TNPS/__idx/DataExtract/201811."${USER_ID}".csv
+;' | sqlite3 -cmd ".headers ON" TNPS.db | iconv -c -f UTF-8 -t ISO-8859-1//IGNORE | csvformat --delimiter "|" --quoting 0 | ~/github/sieferos/wsl01x/scripts/fixdates.pl | tee ${HOME}/Daniel/TNPS/__idx/DataExtract/${YYYYMM}."${USER_ID}".csv
+done
 done
 
-csvcut --names DataExtract.201811.21006881.csv
+csvcut --names DataExtract.201811.64079489.csv
 ```
 
 echo 'SELECT DISTINCT "userid(ow)(evar39)" FROM DataExtract;' | sqlite3 TNPS.db | wc
@@ -247,7 +257,7 @@ echo 'SELECT "Date","userid(ow)(evar39)", count() as C FROM DataExtract GROUP BY
 
 
 ```bash
-cd ${HOME}/Daniel/TNPS/ && for USER_ID in $(sort ${HOME}/Daniel/TNPS/USER_ID.csv) ; do
+cd ${HOME}/Daniel/TNPS/ && for USER_ID in $(sort -u ${HOME}/Daniel/TNPS/USER_ID.201902.csv) ; do
 printf "USER_ID [ %s ]\n" "${USER_ID}"
 echo 'SELECT
 /* "CreationDate" AS DATE, */
@@ -271,7 +281,7 @@ ifnull("NPS", "-null-") AS NPS
 FROM OW_eCare
 WHERE USER_ID != "-"
 /**/
-AND "CreationDate" LIKE "2018/11/%"
+AND "CreationDate" LIKE "2019/02/%"
 /**/
 AND USER_ID = "'${USER_ID}'"
 GROUP BY
@@ -290,50 +300,80 @@ USER_ID,
 VERBATIM,
 NPS
 /* ORDER BY C DESC */
-;' | sqlite3 -cmd ".headers ON" TNPS.db | csvformat --delimiter "|" --quoting 0 | ~/github/sieferos/wsl01x/scripts/fixdates.pl | tee ${HOME}/Daniel/TNPS/__idx/OW_eCare/201811."${USER_ID}".csv
+;' | sqlite3 -cmd ".headers ON" TNPS.db | csvformat --delimiter "|" --quoting 0 | ~/github/sieferos/wsl01x/scripts/fixdates.pl | tee ${HOME}/Daniel/TNPS/__idx/OW_eCare/201902."${USER_ID}".csv
 done
 
-csvcut --names OW_eCare.201811.21006881.csv
+csvcut --names OW_eCare.201811.64079489.csv
 ```
 
 ```
-csvjoin --no-inference --columns "USER_ID" DataExtract.201811.21006881.csv OW_eCare.201811.21006881.csv | tee DataExtract-OW_eCare.201811.21006881.csv
+csvjoin --no-inference --columns "USER_ID" DataExtract.201811.64079489.csv OW_eCare.201811.64079489.csv | tee DataExtract-OW_eCare.201811.64079489.csv
 
-~/github/sieferos/wsl01x/scripts/csv2xls.pl OW_eCare-DataExtract.201811.21006881.csv OW_eCare-DataExtract.201811.21006881.xls
+~/github/sieferos/wsl01x/scripts/csv2xls.pl OW_eCare-DataExtract.201811.64079489.csv OW_eCare-DataExtract.201811.64079489.xls
 ```
 
 ```bash
-cd ${HOME}/Daniel/TNPS/ && for USER_ID in 21006881 ; do
+cd ${HOME}/Daniel/TNPS/ && for USER_ID in 64079489 ; do
 
-cd ${HOME}/Daniel/TNPS/ && for USER_ID in $(sort ${HOME}/Daniel/TNPS/USER_ID.csv) ; do
-printf "USER_ID [ %s ]\n" "${USER_ID}"
-DATAEXTRACT="${HOME}/Daniel/TNPS/__idx/DataExtract/201811.${USER_ID}.csv"
+
+for YYYYMM in \
+201811 \
+201812 \
+201901 \
+201902 \
+
+for YYYYMM in \
+201902 \
+; do
+cd ${HOME}/Daniel/TNPS/ && for USER_ID in $(sort -u ${HOME}/Daniel/TNPS/USER_ID.${YYYYMM}.csv) ; do
+# cd ${HOME}/Daniel/TNPS/ && for USER_ID in 64079489 ; do
+DATAEXTRACT="${HOME}/Daniel/TNPS/__idx/DataExtract/${YYYYMM}.${USER_ID}.csv"
+printf "PIVOT: USER_ID [ %s | %s ] ( %s )\n" "${YYYYMM}" "${USER_ID}" "${DATAEXTRACT}"
 if [[ -e "${DATAEXTRACT}" ]] ; then
-  cat ${HOME}/github/sieferos/wsl01x/scripts/cfg/*.cfg "${DATAEXTRACT}" | ${HOME}/github/sieferos/wsl01x/scripts/flattener.pl 2>&1 | tee "${HOME}/Daniel/TNPS/__idx/DataExtract/201811.${USER_ID}.PIVOT.csv"
+  cat ${HOME}/github/sieferos/wsl01x/scripts/cfg/*.cfg "${DATAEXTRACT}" | ${HOME}/github/sieferos/wsl01x/scripts/flattener.pl 2>&1 | tee "${HOME}/Daniel/TNPS/__idx/DataExtract/${YYYYMM}.${USER_ID}.PIVOT.csv"
 else
-  printf "\t(KO) [ D:%s ]\n" "${DATAEXTRACT}"
+  printf "\t(KO) [ %s: D:%s ]\n" "${YYYYMM}" "${DATAEXTRACT}"
 fi
+done
 done
 ```
 
 ```bash
 mkdir -p ${HOME}/Daniel/TNPS/__idx/__JOIN__/
-cd ${HOME}/Daniel/TNPS/ && for USER_ID in 21006881 ; do
+cd ${HOME}/Daniel/TNPS/ && for USER_ID in 64079489 ; do
 
-cd ${HOME}/Daniel/TNPS/ && for USER_ID in $(sort ${HOME}/Daniel/TNPS/USER_ID.csv) ; do
-printf "USER_ID [ %s ]\n" "${USER_ID}"
-OW_ECARE="${HOME}/Daniel/TNPS/__idx/OW_eCare/201811.${USER_ID}.csv"
-# DATAEXTRACT="${HOME}/Daniel/TNPS/__idx/DataExtract/201811.${USER_ID}.csv"
-DATAEXTRACT="${HOME}/Daniel/TNPS/__idx/DataExtract/201811.${USER_ID}.PIVOT.csv"
+for YYYYMM in \
+201811 \
+201812 \
+201901 \
+201902 \
+
+for YYYYMM in \
+201902 \
+; do
+cd ${HOME}/Daniel/TNPS/ && for USER_ID in $(sort -u ${HOME}/Daniel/TNPS/USER_ID.${YYYYMM}.csv) ; do
+# cd ${HOME}/Daniel/TNPS/ && for USER_ID in 64079489 ; do
+printf "JOIN: USER_ID [ %s | %s ]\n" "${YYYYMM}" "${USER_ID}"
+OW_ECARE="${HOME}/Daniel/TNPS/__idx/OW_eCare/${YYYYMM}.${USER_ID}.csv"
+# DATAEXTRACT="${HOME}/Daniel/TNPS/__idx/DataExtract/${YYYYMM}.${USER_ID}.csv"
+DATAEXTRACT="${HOME}/Daniel/TNPS/__idx/DataExtract/${YYYYMM}.${USER_ID}.PIVOT.csv"
 if [[ -e "${OW_ECARE}" && -e "${DATAEXTRACT}" ]] ; then
   # printf "\t(OK) [ O:%s | D:%s ]\n" "${OW_ECARE}" "${DATAEXTRACT}"
-  csvjoin --no-inference --columns "USER_ID" "${DATAEXTRACT}" "${OW_ECARE}" | tee "${HOME}/Daniel/TNPS/__idx/__JOIN__/201811.${USER_ID}.csv"
+  csvjoin --no-inference --columns "USER_ID" "${DATAEXTRACT}" "${OW_ECARE}" | tee "${HOME}/Daniel/TNPS/__idx/__JOIN__/${YYYYMM}.${USER_ID}.csv"
 else
   printf "\t(KO) [ O:%s | D:%s ]\n" "${OW_ECARE}" "${DATAEXTRACT}"
 fi
 done
+done
 ```
 
 ```bash
-cd ${HOME}/Daniel/TNPS/ && csvstack __idx/__JOIN__/201811.* | csvformat --quoting 0 --out-delimiter ';' | tee DataExtract-OW_eCare.JOIN.201811.csv && wc DataExtract-OW_eCare.JOIN.201811.csv
+for YYYYMM in \
+201811 \
+201812 \
+201901 \
+201902 \
+; do
+cd ${HOME}/Daniel/TNPS/ && csvstack __idx/__JOIN__/${YYYYMM}.* | csvformat --quoting 0 | tee DataExtract-OW_eCare.JOIN.${YYYYMM}.csv && wc DataExtract-OW_eCare.JOIN.${YYYYMM}.csv
+done
 ```

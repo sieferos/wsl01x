@@ -2,102 +2,112 @@
 
 	Type of data:          Number
 	Contains null values:  False
-	Unique values:         1132
+	Unique values:         1166
 	Smallest value:        251.926
 	Largest value:         985.589.181
-	Sum:                   283.094.972.636
-	Mean:                  236.899.558,691
-	Median:                105.382.117
-	StDev:                 259.358.450,023
-	Most common values:    106.021.225 (3x)
-	                       237.711.271 (3x)
-	                       559.864.352 (3x)
-	                       865.307.373 (3x)
-	                       103.370.114 (2x)
+	Sum:                   316.988.609.764
+	Mean:                  241.055.977,007
+	Median:                105.573.786
+	StDev:                 263.734.682,164
+	Most common values:    106.021.225 (6x)
+	                       104.157.984 (4x)
+	                       104.876.854 (4x)
+	                       104.197.598 (3x)
+	                       166.789.401 (3x)
 
   2. "visitorstatus"
 
 	Type of data:          Text
 	Contains null values:  False
-	Unique values:         2
+	Unique values:         3
 	Longest value:         19 characters
-	Most common values:    particular postpago (1170x)
+	Most common values:    particular postpago (1281x)
 	                       particular prepago (25x)
+	                       Unknown (9x)
 
   3. "prepaid_postpaid"
 
 	Type of data:          Text
 	Contains null values:  False
-	Unique values:         2
+	Unique values:         3
 	Longest value:         19 characters
-	Most common values:    particular postpago (1170x)
+	Most common values:    particular postpago (1272x)
 	                       prepago (25x)
+	                       velocidad maxima (18x)
 
   4. "purchasedpackages"
 
 	Type of data:          Text
 	Contains null values:  False
-	Unique values:         3
+	Unique values:         4
 	Longest value:         10 characters
-	Most common values:    one (733x)
-	                       no paquete (370x)
-	                       paquete (92x)
+	Most common values:    one (819x)
+	                       no paquete (390x)
+	                       paquete (97x)
+	                       completo (9x)
 
   5. "loginprofile"
 
 	Type of data:          Text
 	Contains null values:  False
-	Unique values:         2
-	Longest value:         8 characters
-	Most common values:    completo (1176x)
-	                       ligero (19x)
+	Unique values:         5
+	Longest value:         23 characters
+	Most common values:    completo (1285x)
+	                       ligero (21x)
+	                       ver producto contratado (7x)
+	                       sva:error carga (1x)
+	                       error carga facturas (1x)
 
   6. "clientdebt"
 
-	Type of data:          Boolean
+	Type of data:          Text
 	Contains null values:  False
-	Unique values:         2
-	Most common values:    False (1131x)
-	                       True (64x)
+	Unique values:         5
+	Longest value:         10 characters
+	Most common values:    False (1229x)
+	                       True (68x)
+	                       new (8x)
+	                       repeat (8x)
+	                       new|repeat (2x)
 
   7. "navigationspeed"
 
 	Type of data:          Boolean
 	Contains null values:  False
 	Unique values:         2
-	Most common values:    True (702x)
-	                       False (493x)
+	Most common values:    True (782x)
+	                       False (533x)
 
   8. "ERROR"
 
 	Type of data:          Boolean
 	Contains null values:  False
 	Unique values:         2
-	Most common values:    True (763x)
-	                       False (432x)
+	Most common values:    True (850x)
+	                       False (465x)
 
   9. "abonos:sin abonos"
 
 	Type of data:          Boolean
 	Contains null values:  False
 	Unique values:         2
-	Most common values:    False (954x)
-	                       True (241x)
+	Most common values:    False (1049x)
+	                       True (266x)
 
  10. "averias:averias"
 
 	Type of data:          Boolean
 	Contains null values:  False
 	Unique values:         2
-	Most common values:    False (902x)
-	                       True (293x)
+	Most common values:    False (990x)
+	                       True (325x)
 
  11. "avisos:detalle de factura"
 
 	Type of data:          Boolean
 	Contains null values:  False
 	Unique values:         2
-	Most common values:    False (1181x)
+	Most common values:    False (1301x)
 	                       True (14x)
 
  12. "avisos:flujo autodiagnostico"
@@ -105,7 +115,7 @@
 	Type of data:          Boolean
 	Contains null values:  False
 	Unique values:         2
-	Most common values:    False (1194x)
+	Most common values:    False (1314x)
 	                       True (1x)
 
  13. "avisos:ko"
@@ -113,7 +123,7 @@
 	Type of data:          Boolean
 	Contains null values:  False
 	Unique values:         2
-	Most common values:    False (1186x)
+	Most common values:    False (1306x)
 	                       True (9x)
 
  14. "avisos:mis productos"
@@ -121,22 +131,22 @@
 	Type of data:          Boolean
 	Contains null values:  False
 	Unique values:         2
-	Most common values:    False (1194x)
-	                       True (1x)
+	Most common values:    False (1310x)
+	                       True (5x)
 
  15. "avisos:nacional"
 
 	Type of data:          Boolean
 	Contains null values:  False
 	Unique values:         1
-	Most common values:    False (1195x)
+	Most common values:    False (1315x)
 
  16. "avisos:ok"
 
 	Type of data:          Boolean
 	Contains null values:  False
 	Unique values:         2
-	Most common values:    False (1194x)
+	Most common values:    False (1314x)
 	                       True (1x)
 
  17. "avisos:resumen"
@@ -144,14 +154,14 @@
 	Type of data:          Boolean
 	Contains null values:  False
 	Unique values:         1
-	Most common values:    False (1195x)
+	Most common values:    False (1315x)
 
  18. "avisos:upgrade"
 
 	Type of data:          Boolean
 	Contains null values:  False
 	Unique values:         2
-	Most common values:    False (1193x)
+	Most common values:    False (1313x)
 	                       True (2x)
 
  19. "avisos:upgrade perfil"
@@ -159,7 +169,7 @@
 	Type of data:          Boolean
 	Contains null values:  False
 	Unique values:         2
-	Most common values:    False (1190x)
+	Most common values:    False (1310x)
 	                       True (5x)
 
  20. "bienvenida:ko"
@@ -167,7 +177,7 @@
 	Type of data:          Boolean
 	Contains null values:  False
 	Unique values:         2
-	Most common values:    False (1193x)
+	Most common values:    False (1313x)
 	                       True (2x)
 
  21. "confirmacion direccion correo:confirmar pdf2mail"
@@ -175,104 +185,104 @@
 	Type of data:          Boolean
 	Contains null values:  False
 	Unique values:         2
-	Most common values:    False (1176x)
-	                       True (19x)
+	Most common values:    False (1292x)
+	                       True (23x)
 
  22. "consentimiento permisos:ko"
 
 	Type of data:          Boolean
 	Contains null values:  False
 	Unique values:         1
-	Most common values:    False (1195x)
+	Most common values:    False (1315x)
 
  23. "consigue una nueva clave:bienvenido vamos a iniciar el cambio de clave"
 
 	Type of data:          Boolean
 	Contains null values:  False
 	Unique values:         1
-	Most common values:    False (1195x)
+	Most common values:    False (1315x)
 
  24. "consigue una nueva clave:confirma tu solicitud"
 
 	Type of data:          Boolean
 	Contains null values:  False
 	Unique values:         1
-	Most common values:    False (1195x)
+	Most common values:    False (1315x)
 
  25. "consigue una nueva clave:elige tu clave"
 
 	Type of data:          Boolean
 	Contains null values:  False
 	Unique values:         1
-	Most common values:    False (1195x)
+	Most common values:    False (1315x)
 
  26. "consigue una nueva clave:identificate"
 
 	Type of data:          Boolean
 	Contains null values:  False
 	Unique values:         1
-	Most common values:    False (1195x)
+	Most common values:    False (1315x)
 
  27. "consigue una nueva clave:se ha actualizado la clave"
 
 	Type of data:          Boolean
 	Contains null values:  False
 	Unique values:         1
-	Most common values:    False (1195x)
+	Most common values:    False (1315x)
 
  28. "datos personales:acceso"
 
 	Type of data:          Boolean
 	Contains null values:  False
 	Unique values:         2
-	Most common values:    False (823x)
-	                       True (372x)
+	Most common values:    False (914x)
+	                       True (401x)
 
  29. "datos personales:autorizados"
 
 	Type of data:          Boolean
 	Contains null values:  False
 	Unique values:         1
-	Most common values:    False (1195x)
+	Most common values:    False (1315x)
 
  30. "datos personales:contratos y documentos"
 
 	Type of data:          Boolean
 	Contains null values:  False
 	Unique values:         2
-	Most common values:    False (732x)
-	                       True (463x)
+	Most common values:    False (813x)
+	                       True (502x)
 
  31. "datos personales:facturacion"
 
 	Type of data:          Boolean
 	Contains null values:  False
 	Unique values:         2
-	Most common values:    False (772x)
-	                       True (423x)
+	Most common values:    False (858x)
+	                       True (457x)
 
  32. "datos personales:permanencias"
 
 	Type of data:          Boolean
 	Contains null values:  False
 	Unique values:         2
-	Most common values:    False (724x)
-	                       True (471x)
+	Most common values:    False (804x)
+	                       True (511x)
 
  33. "datos personales:preferencias"
 
 	Type of data:          Boolean
 	Contains null values:  False
 	Unique values:         2
-	Most common values:    False (825x)
-	                       True (370x)
+	Most common values:    False (915x)
+	                       True (400x)
 
  34. "datos personales:privacidad de tus datos"
 
 	Type of data:          Boolean
 	Contains null values:  False
 	Unique values:         2
-	Most common values:    False (1194x)
+	Most common values:    False (1314x)
 	                       True (1x)
 
  35. "datos personales:titular"
@@ -280,44 +290,44 @@
 	Type of data:          Boolean
 	Contains null values:  False
 	Unique values:         2
-	Most common values:    True (726x)
-	                       False (469x)
+	Most common values:    True (789x)
+	                       False (526x)
 
  36. "home:mis productos"
 
 	Type of data:          Boolean
 	Contains null values:  False
 	Unique values:         1
-	Most common values:    False (1195x)
+	Most common values:    False (1315x)
 
  37. "imperlogin:imperdiscriminador"
 
 	Type of data:          Boolean
 	Contains null values:  False
 	Unique values:         1
-	Most common values:    False (1195x)
+	Most common values:    False (1315x)
 
  38. "imperlogin:imperloginintermedia"
 
 	Type of data:          Boolean
 	Contains null values:  False
 	Unique values:         1
-	Most common values:    False (1195x)
+	Most common values:    False (1315x)
 
  39. "mi wifi:activar wifi"
 
 	Type of data:          Boolean
 	Contains null values:  False
 	Unique values:         2
-	Most common values:    False (1186x)
-	                       True (9x)
+	Most common values:    False (1305x)
+	                       True (10x)
 
  40. "mi wifi:cambiar canal"
 
 	Type of data:          Boolean
 	Contains null values:  False
 	Unique values:         2
-	Most common values:    False (1192x)
+	Most common values:    False (1312x)
 	                       True (3x)
 
  41. "mi wifi:cambiar contrasena"
@@ -325,7 +335,7 @@
 	Type of data:          Boolean
 	Contains null values:  False
 	Unique values:         2
-	Most common values:    False (1186x)
+	Most common values:    False (1306x)
 	                       True (9x)
 
  42. "mi wifi:cambiar contrasena wifi"
@@ -333,7 +343,7 @@
 	Type of data:          Boolean
 	Contains null values:  False
 	Unique values:         2
-	Most common values:    False (1194x)
+	Most common values:    False (1314x)
 	                       True (1x)
 
  43. "mi wifi:cambiar nombre red"
@@ -341,7 +351,7 @@
 	Type of data:          Boolean
 	Contains null values:  False
 	Unique values:         2
-	Most common values:    False (1188x)
+	Most common values:    False (1308x)
 	                       True (7x)
 
  44. "mi wifi:cambio tipo seguridad"
@@ -349,29 +359,29 @@
 	Type of data:          Boolean
 	Contains null values:  False
 	Unique values:         1
-	Most common values:    False (1195x)
+	Most common values:    False (1315x)
 
  45. "mi wifi:desactivar wifi"
 
 	Type of data:          Boolean
 	Contains null values:  False
 	Unique values:         2
-	Most common values:    False (1186x)
-	                       True (9x)
+	Most common values:    False (1305x)
+	                       True (10x)
 
  46. "mi wifi:flujo autodiagnostico"
 
 	Type of data:          Boolean
 	Contains null values:  False
 	Unique values:         1
-	Most common values:    False (1195x)
+	Most common values:    False (1315x)
 
  47. "mi wifi:ko"
 
 	Type of data:          Boolean
 	Contains null values:  False
 	Unique values:         2
-	Most common values:    False (1194x)
+	Most common values:    False (1314x)
 	                       True (1x)
 
  48. "mi wifi:mis productos"
@@ -379,14 +389,14 @@
 	Type of data:          Boolean
 	Contains null values:  False
 	Unique values:         1
-	Most common values:    False (1195x)
+	Most common values:    False (1315x)
 
  49. "mi wifi:ok"
 
 	Type of data:          Boolean
 	Contains null values:  False
 	Unique values:         2
-	Most common values:    False (1194x)
+	Most common values:    False (1314x)
 	                       True (1x)
 
  50. "mi wifi:resumen"
@@ -394,7 +404,7 @@
 	Type of data:          Boolean
 	Contains null values:  False
 	Unique values:         2
-	Most common values:    False (1194x)
+	Most common values:    False (1314x)
 	                       True (1x)
 
  51. "mi wifi:upgrade"
@@ -402,7 +412,7 @@
 	Type of data:          Boolean
 	Contains null values:  False
 	Unique values:         2
-	Most common values:    False (1194x)
+	Most common values:    False (1314x)
 	                       True (1x)
 
  52. "mi wifi:upgrade perfil"
@@ -410,7 +420,7 @@
 	Type of data:          Boolean
 	Contains null values:  False
 	Unique values:         2
-	Most common values:    False (1194x)
+	Most common values:    False (1314x)
 	                       True (1x)
 
  53. "mis facturas:abonos"
@@ -418,79 +428,79 @@
 	Type of data:          Boolean
 	Contains null values:  False
 	Unique values:         2
-	Most common values:    False (1008x)
-	                       True (187x)
+	Most common values:    False (1096x)
+	                       True (219x)
 
  54. "mis facturas:estado de mis pagos"
 
 	Type of data:          Boolean
 	Contains null values:  False
 	Unique values:         2
-	Most common values:    False (772x)
-	                       True (423x)
+	Most common values:    False (844x)
+	                       True (471x)
 
  55. "mis facturas:facturas de dispositivos"
 
 	Type of data:          Boolean
 	Contains null values:  False
 	Unique values:         2
-	Most common values:    False (706x)
-	                       True (489x)
+	Most common values:    False (773x)
+	                       True (542x)
 
  56. "mis facturas:mis facturas"
 
 	Type of data:          Boolean
 	Contains null values:  False
 	Unique values:         2
-	Most common values:    True (1029x)
-	                       False (166x)
+	Most common values:    True (1123x)
+	                       False (192x)
 
  57. "mis facturas:opciones"
 
 	Type of data:          Boolean
 	Contains null values:  False
 	Unique values:         2
-	Most common values:    False (755x)
-	                       True (440x)
+	Most common values:    False (825x)
+	                       True (490x)
 
  58. "mis productos:consumo"
 
 	Type of data:          Boolean
 	Contains null values:  False
 	Unique values:         2
-	Most common values:    True (780x)
-	                       False (415x)
+	Most common values:    True (881x)
+	                       False (434x)
 
  59. "mis productos:decodificadores"
 
 	Type of data:          Boolean
 	Contains null values:  False
 	Unique values:         2
-	Most common values:    False (1121x)
-	                       True (74x)
+	Most common values:    False (1227x)
+	                       True (88x)
 
  60. "mis productos:home"
 
 	Type of data:          Boolean
 	Contains null values:  False
 	Unique values:         2
-	Most common values:    True (1161x)
-	                       False (34x)
+	Most common values:    True (1260x)
+	                       False (55x)
 
  61. "mis productos:movil y sim"
 
 	Type of data:          Boolean
 	Contains null values:  False
 	Unique values:         2
-	Most common values:    False (755x)
-	                       True (440x)
+	Most common values:    False (831x)
+	                       True (484x)
 
  62. "mis productos:nacional"
 
 	Type of data:          Boolean
 	Contains null values:  False
 	Unique values:         2
-	Most common values:    False (1192x)
+	Most common values:    False (1312x)
 	                       True (3x)
 
  63. "mis productos:opciones"
@@ -498,31 +508,31 @@
 	Type of data:          Boolean
 	Contains null values:  False
 	Unique values:         2
-	Most common values:    False (924x)
-	                       True (271x)
+	Most common values:    False (1018x)
+	                       True (297x)
 
  64. "mis productos:producto contratado"
 
 	Type of data:          Boolean
 	Contains null values:  False
 	Unique values:         2
-	Most common values:    True (1036x)
-	                       False (159x)
+	Most common values:    True (1133x)
+	                       False (182x)
 
  65. "mis productos:que tienes contratado"
 
 	Type of data:          Boolean
 	Contains null values:  False
 	Unique values:         2
-	Most common values:    False (1157x)
-	                       True (38x)
+	Most common values:    False (1269x)
+	                       True (46x)
 
  66. "mis productos:recarga y anticipo"
 
 	Type of data:          Boolean
 	Contains null values:  False
 	Unique values:         2
-	Most common values:    False (1190x)
+	Most common values:    False (1310x)
 	                       True (5x)
 
  67. "mis productos:saldo y consumo"
@@ -530,7 +540,7 @@
 	Type of data:          Boolean
 	Contains null values:  False
 	Unique values:         2
-	Most common values:    False (1172x)
+	Most common values:    False (1292x)
 	                       True (23x)
 
  68. "mis productos:tarifa"
@@ -538,31 +548,31 @@
 	Type of data:          Boolean
 	Contains null values:  False
 	Unique values:         2
-	Most common values:    True (780x)
-	                       False (415x)
+	Most common values:    True (857x)
+	                       False (458x)
 
  69. "mis productos:tarifas"
 
 	Type of data:          Boolean
 	Contains null values:  False
 	Unique values:         2
-	Most common values:    False (1164x)
-	                       True (31x)
+	Most common values:    False (1278x)
+	                       True (37x)
 
  70. "mis productos:v by vodafone"
 
 	Type of data:          Boolean
 	Contains null values:  False
 	Unique values:         2
-	Most common values:    False (918x)
-	                       True (277x)
+	Most common values:    False (1012x)
+	                       True (303x)
 
  71. "mis productos:vodafone tv"
 
 	Type of data:          Boolean
 	Contains null values:  False
 	Unique values:         2
-	Most common values:    False (1194x)
+	Most common values:    False (1314x)
 	                       True (1x)
 
  72. "popup lego:no bloqueante"
@@ -570,113 +580,113 @@
 	Type of data:          Boolean
 	Contains null values:  False
 	Unique values:         2
-	Most common values:    False (1119x)
-	                       True (76x)
+	Most common values:    False (1229x)
+	                       True (86x)
 
  73. "que necesitas:compromiso de permanencia"
 
 	Type of data:          Boolean
 	Contains null values:  False
 	Unique values:         1
-	Most common values:    False (1195x)
+	Most common values:    False (1315x)
 
  74. "que necesitas:facturas"
 
 	Type of data:          Boolean
 	Contains null values:  False
 	Unique values:         1
-	Most common values:    False (1195x)
+	Most common values:    False (1315x)
 
  75. "que necesitas:mis datos personales"
 
 	Type of data:          Boolean
 	Contains null values:  False
 	Unique values:         1
-	Most common values:    False (1195x)
+	Most common values:    False (1315x)
 
  76. "recuperar clave:escribe tu clave"
 
 	Type of data:          Boolean
 	Contains null values:  False
 	Unique values:         1
-	Most common values:    False (1195x)
+	Most common values:    False (1315x)
 
  77. "recuperar clave:verificar email"
 
 	Type of data:          Boolean
 	Contains null values:  False
 	Unique values:         1
-	Most common values:    False (1195x)
+	Most common values:    False (1315x)
 
  78. "registrate en mi vodafone:elige tu clave"
 
 	Type of data:          Boolean
 	Contains null values:  False
 	Unique values:         1
-	Most common values:    False (1195x)
+	Most common values:    False (1315x)
 
  79. "registrate en mi vodafone:enhorabuena"
 
 	Type of data:          Boolean
 	Contains null values:  False
 	Unique values:         1
-	Most common values:    False (1195x)
+	Most common values:    False (1315x)
 
  80. " se ha cambiado el usuario"
 
 	Type of data:          Boolean
 	Contains null values:  False
 	Unique values:         1
-	Most common values:    False (1195x)
+	Most common values:    False (1315x)
 
  81. "registrate en mi vodafone:error"
 
 	Type of data:          Boolean
 	Contains null values:  False
 	Unique values:         1
-	Most common values:    False (1195x)
+	Most common values:    False (1315x)
 
  82. "registrate en mi vodafone:identificate"
 
 	Type of data:          Boolean
 	Contains null values:  False
 	Unique values:         1
-	Most common values:    False (1195x)
+	Most common values:    False (1315x)
 
  83. "registrate en mi vodafone:perfil"
 
 	Type of data:          Boolean
 	Contains null values:  False
 	Unique values:         1
-	Most common values:    False (1195x)
+	Most common values:    False (1315x)
 
  84. "registrate en mi vodafone:revisa tu bandeja de entrada"
 
 	Type of data:          Boolean
 	Contains null values:  False
 	Unique values:         1
-	Most common values:    False (1195x)
+	Most common values:    False (1315x)
 
  85. "registro:confirmacion"
 
 	Type of data:          Boolean
 	Contains null values:  False
 	Unique values:         1
-	Most common values:    False (1195x)
+	Most common values:    False (1315x)
 
  86. "registro:popup numero ono"
 
 	Type of data:          Boolean
 	Contains null values:  False
 	Unique values:         1
-	Most common values:    False (1195x)
+	Most common values:    False (1315x)
 
  87. "registro:selecciona tu perfil"
 
 	Type of data:          Boolean
 	Contains null values:  False
 	Unique values:         2
-	Most common values:    False (1191x)
+	Most common values:    False (1311x)
 	                       True (4x)
 
  88. "resumen:nacional"
@@ -684,80 +694,81 @@
 	Type of data:          Boolean
 	Contains null values:  False
 	Unique values:         1
-	Most common values:    False (1195x)
+	Most common values:    False (1315x)
 
  89. "seguimiento de pedidos:mis productos"
 
 	Type of data:          Boolean
 	Contains null values:  False
 	Unique values:         1
-	Most common values:    False (1195x)
+	Most common values:    False (1315x)
 
  90. "seguimiento de pedidos:pedidos completados"
 
 	Type of data:          Boolean
 	Contains null values:  False
-	Unique values:         1
-	Most common values:    False (1195x)
+	Unique values:         2
+	Most common values:    False (1313x)
+	                       True (2x)
 
  91. "seguimiento de pedidos:pedidos en curso"
 
 	Type of data:          Boolean
 	Contains null values:  False
 	Unique values:         2
-	Most common values:    False (1179x)
-	                       True (16x)
+	Most common values:    False (1298x)
+	                       True (17x)
 
  92. "servicios antiguos ono:modificar clave"
 
 	Type of data:          Boolean
 	Contains null values:  False
 	Unique values:         1
-	Most common values:    False (1195x)
+	Most common values:    False (1315x)
 
  93. "super wifi:contratacion"
 
 	Type of data:          Boolean
 	Contains null values:  False
 	Unique values:         1
-	Most common values:    False (1195x)
+	Most common values:    False (1315x)
 
  94. "te ayudamos:detalle de factura"
 
 	Type of data:          Boolean
 	Contains null values:  False
 	Unique values:         2
-	Most common values:    False (1194x)
-	                       True (1x)
+	Most common values:    False (1313x)
+	                       True (2x)
 
  95. "te ayudamos:ko"
 
 	Type of data:          Boolean
 	Contains null values:  False
 	Unique values:         1
-	Most common values:    False (1195x)
+	Most common values:    False (1315x)
 
  96. "te ayudamos:mis productos"
 
 	Type of data:          Boolean
 	Contains null values:  False
 	Unique values:         1
-	Most common values:    False (1195x)
+	Most common values:    False (1315x)
 
  97. "te puede interesar:contacta"
 
 	Type of data:          Boolean
 	Contains null values:  False
 	Unique values:         2
-	Most common values:    False (1194x)
-	                       True (1x)
+	Most common values:    False (1308x)
+	                       True (7x)
 
  98. "television y mas:amazon prime"
 
 	Type of data:          Boolean
 	Contains null values:  False
 	Unique values:         2
-	Most common values:    False (1192x)
+	Most common values:    False (1312x)
 	                       True (3x)
 
  99. "television y mas:filmin"
@@ -765,55 +776,55 @@
 	Type of data:          Boolean
 	Contains null values:  False
 	Unique values:         2
-	Most common values:    False (1047x)
-	                       True (148x)
+	Most common values:    False (1153x)
+	                       True (162x)
 
 100. "television y mas:hbo espana"
 
 	Type of data:          Boolean
 	Contains null values:  False
 	Unique values:         2
-	Most common values:    False (723x)
-	                       True (472x)
+	Most common values:    False (799x)
+	                       True (516x)
 
 101. "television y mas:television"
 
 	Type of data:          Boolean
 	Contains null values:  False
 	Unique values:         2
-	Most common values:    False (1127x)
-	                       True (68x)
+	Most common values:    False (1242x)
+	                       True (73x)
 
 102. "television y mas:tidal"
 
 	Type of data:          Boolean
 	Contains null values:  False
 	Unique values:         2
-	Most common values:    False (1029x)
-	                       True (166x)
+	Most common values:    False (1127x)
+	                       True (188x)
 
 103. "television y mas:tv online"
 
 	Type of data:          Boolean
 	Contains null values:  False
 	Unique values:         2
-	Most common values:    False (1116x)
-	                       True (79x)
+	Most common values:    False (1231x)
+	                       True (84x)
 
 104. "television:tv filmin"
 
 	Type of data:          Boolean
 	Contains null values:  False
 	Unique values:         2
-	Most common values:    False (1047x)
-	                       True (148x)
+	Most common values:    False (1149x)
+	                       True (166x)
 
 105. "vodafone tv:resumen tv"
 
 	Type of data:          Boolean
 	Contains null values:  False
 	Unique values:         2
-	Most common values:    False (1194x)
+	Most common values:    False (1314x)
 	                       True (1x)
 
 106. "vodafone tv:upselling"
@@ -821,30 +832,30 @@
 	Type of data:          Boolean
 	Contains null values:  False
 	Unique values:         2
-	Most common values:    True (1132x)
-	                       False (63x)
+	Most common values:    True (1232x)
+	                       False (83x)
 
 107. "cliente activo"
 
 	Type of data:          Boolean
 	Contains null values:  False
 	Unique values:         1
-	Most common values:    False (1195x)
+	Most common values:    False (1315x)
 
 108. "desconectado"
 
 	Type of data:          Boolean
 	Contains null values:  False
 	Unique values:         2
-	Most common values:    False (975x)
-	                       True (220x)
+	Most common values:    False (1073x)
+	                       True (242x)
 
 109. "pendiente de cambio"
 
 	Type of data:          Boolean
 	Contains null values:  False
 	Unique values:         2
-	Most common values:    False (1191x)
+	Most common values:    False (1311x)
 	                       True (4x)
 
 110. "pendiente de desconectar"
@@ -852,22 +863,22 @@
 	Type of data:          Boolean
 	Contains null values:  False
 	Unique values:         2
-	Most common values:    False (1172x)
-	                       True (23x)
+	Most common values:    False (1291x)
+	                       True (24x)
 
 111. "pendiente de instalar"
 
 	Type of data:          Boolean
 	Contains null values:  False
 	Unique values:         1
-	Most common values:    False (1195x)
+	Most common values:    False (1315x)
 
 112. "pendiente de reconectar"
 
 	Type of data:          Boolean
 	Contains null values:  True (excluded from calculations)
 	Unique values:         1
-	Most common values:    None (1195x)
+	Most common values:    None (1315x)
 
 113. "Country"
 
@@ -875,11 +886,11 @@
 	Contains null values:  False
 	Unique values:         13
 	Longest value:         14 characters
-	Most common values:    Spain (1166x)
-	                       United Kingdom (7x)
-	                       France (5x)
+	Most common values:    Spain (1281x)
+	                       United Kingdom (9x)
+	                       France (7x)
 	                       Germany (4x)
-	                       United States (3x)
+	                       United States (4x)
 
 114. "Region"
 
@@ -887,23 +898,23 @@
 	Contains null values:  False
 	Unique values:         35
 	Longest value:         27 characters
-	Most common values:    Madrid, Comunidad de (271x)
-	                       Andalucia (208x)
-	                       Valenciana, Comunidad (157x)
-	                       Catalunya (141x)
-	                       Castilla y Leon (58x)
+	Most common values:    Madrid, Comunidad de (295x)
+	                       Andalucia (222x)
+	                       Valenciana, Comunidad (181x)
+	                       Catalunya (148x)
+	                       Castilla y Leon (63x)
 
 115. "City"
 
 	Type of data:          Text
 	Contains null values:  False
-	Unique values:         195
+	Unique values:         198
 	Longest value:         26 characters
-	Most common values:    Madrid (268x)
-	                       Barcelona (103x)
-	                       Valencia (84x)
-	                       Alicante (41x)
-	                       Sevilla (37x)
+	Most common values:    Madrid (292x)
+	                       Barcelona (110x)
+	                       Valencia (101x)
+	                       Murcia (43x)
+	                       Alicante (42x)
 
 116. "PrimaryHardwareType"
 
@@ -911,7 +922,7 @@
 	Contains null values:  True (excluded from calculations)
 	Unique values:         5
 	Longest value:         12 characters
-	Most common values:    Desktop (1130x)
+	Most common values:    Desktop (1250x)
 	                       Mobile Phone (41x)
 	                       Tablet (22x)
 	                       None (1x)
@@ -923,11 +934,11 @@
 	Contains null values:  False
 	Unique values:         12
 	Longest value:         14 characters
-	Most common values:    Windows 10 (567x)
-	                       Windows 7 (306x)
-	                       OS X (128x)
-	                       Windows 8.1 (55x)
-	                       Windows XP (43x)
+	Most common values:    Windows 10 (622x)
+	                       Windows 7 (336x)
+	                       OS X (149x)
+	                       Windows 8.1 (59x)
+	                       Windows XP (51x)
 
 118. "BrowserName"
 
@@ -935,10 +946,10 @@
 	Contains null values:  False
 	Unique values:         9
 	Longest value:         15 characters
-	Most common values:    Chrome (794x)
-	                       Firefox (161x)
-	                       Safari (97x)
-	                       Edge (94x)
+	Most common values:    Chrome (875x)
+	                       Firefox (174x)
+	                       Safari (111x)
+	                       Edge (104x)
 	                       Chrome Mobile (40x)
 
 119. "Recommendation"
@@ -948,44 +959,44 @@
 	Unique values:         11
 	Smallest value:        0
 	Largest value:         10
-	Sum:                   6.236
-	Mean:                  5,218
+	Sum:                   6.953
+	Mean:                  5,287
 	Median:                6
-	StDev:                 3,867
-	Most common values:    0 (314x)
-	                       10 (189x)
-	                       9 (151x)
-	                       8 (136x)
-	                       7 (108x)
+	StDev:                 3,849
+	Most common values:    0 (333x)
+	                       10 (212x)
+	                       9 (167x)
+	                       8 (159x)
+	                       7 (112x)
 
 120. "pageName"
 
 	Type of data:          Text
 	Contains null values:  False
-	Unique values:         27
+	Unique values:         30
 	Longest value:         63 characters
-	Most common values:    mi vodafone:mis productos:producto contratado (276x)
-	                       mi vodafone:datos personales:titular (187x)
-	                       mi vodafone:mis productos:tarifa:mi tarifa (153x)
-	                       mi vodafone:avisos (123x)
-	                       mi vodafone:datos personales:facturacion (103x)
+	Most common values:    mi vodafone:mis productos:producto contratado (329x)
+	                       mi vodafone:datos personales:titular (193x)
+	                       mi vodafone:mis productos:tarifa:mi tarifa (162x)
+	                       mi vodafone:avisos (129x)
+	                       mi vodafone:datos personales:facturacion (114x)
 
 121. "paginasenlavisita"
 
 	Type of data:          Number
 	Contains null values:  False
-	Unique values:         47
+	Unique values:         50
 	Smallest value:        3
 	Largest value:         83
-	Sum:                   14.880
-	Mean:                  12,452
+	Sum:                   16.293
+	Mean:                  12,39
 	Median:                9
-	StDev:                 9,317
-	Most common values:    6 (150x)
-	                       7 (147x)
-	                       8 (95x)
-	                       9 (89x)
-	                       5 (75x)
+	StDev:                 9,471
+	Most common values:    6 (171x)
+	                       7 (168x)
+	                       9 (104x)
+	                       8 (104x)
+	                       5 (82x)
 
 122. "platform"
 
@@ -993,7 +1004,7 @@
 	Contains null values:  False
 	Unique values:         2
 	Longest value:         8 characters
-	Most common values:    estandar (1192x)
+	Most common values:    estandar (1312x)
 	                       - (3x)
 
 123. "VERBATIM"
@@ -1001,7 +1012,7 @@
 	Type of data:          Boolean
 	Contains null values:  False
 	Unique values:         1
-	Most common values:    True (1195x)
+	Most common values:    True (1315x)
 
 124. "NPS"
 
@@ -1009,8 +1020,8 @@
 	Contains null values:  False
 	Unique values:         3
 	Longest value:         9 characters
-	Most common values:    Detractor (611x)
-	                       Promotor (340x)
-	                       Neutro (244x)
+	Most common values:    Detractor (665x)
+	                       Promotor (379x)
+	                       Neutro (271x)
 
-Row count: 1195
+Row count: 1315
