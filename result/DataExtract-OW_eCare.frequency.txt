@@ -1,0 +1,360 @@
+field                                                                   value                                          count
+USER_ID                                                                 105512209                                      8
+USER_ID                                                                 200252001                                      6
+USER_ID                                                                 106021225                                      6
+USER_ID                                                                 724696691                                      4
+USER_ID                                                                 22581935                                       4
+USER_ID                                                                 148188611                                      4
+USER_ID                                                                 11599356                                       4
+USER_ID                                                                 63880327                                       4
+USER_ID                                                                 45217533                                       4
+USER_ID                                                                 164066504                                      4
+visitorstatus                                                           particular postpago                            5145
+visitorstatus                                                           particular prepago                             115
+prepaid_postpaid                                                        particular postpago                            5145
+prepaid_postpaid                                                        prepago                                        115
+purchasedpackages                                                       one                                            3364
+purchasedpackages                                                       no paquete                                     1597
+purchasedpackages                                                       paquete                                        299
+loginprofile                                                            completo                                       5175
+loginprofile                                                            ligero                                         85
+clientdebt                                                              False                                          4984
+clientdebt                                                              True                                           276
+navigationspeed                                                         True                                           2951
+navigationspeed                                                         False                                          2309
+ERROR                                                                   True                                           3442
+ERROR                                                                   False                                          1818
+abonos:sin abonos                                                       0                                              4266
+abonos:sin abonos                                                       1                                              994
+averias:averias                                                         0                                              4117
+averias:averias                                                         1                                              1143
+avisos:desactivar wifi                                                  0                                              5259
+avisos:desactivar wifi                                                  1                                              1
+avisos:detalle de factura                                               0                                              5205
+avisos:detalle de factura                                               1                                              55
+avisos:flujo autodiagnostico                                            0                                              5258
+avisos:flujo autodiagnostico                                            1                                              2
+avisos:ko                                                               0                                              5229
+avisos:ko                                                               1                                              31
+avisos:mis productos                                                    0                                              5135
+avisos:mis productos                                                    1                                              125
+avisos:nacional                                                         0                                              5254
+avisos:nacional                                                         1                                              6
+avisos:ok                                                               0                                              5258
+avisos:ok                                                               1                                              2
+avisos:pedidos en curso                                                 0                                              5254
+avisos:pedidos en curso                                                 1                                              6
+avisos:producto contratado                                              0                                              5259
+avisos:producto contratado                                              1                                              1
+avisos:resumen                                                          0                                              5258
+avisos:resumen                                                          1                                              2
+avisos:upgrade                                                          0                                              5250
+avisos:upgrade                                                          1                                              10
+avisos:upgrade perfil                                                   0                                              5244
+avisos:upgrade perfil                                                   1                                              16
+bienvenida:detalle de factura                                           0                                              5258
+bienvenida:detalle de factura                                           1                                              2
+bienvenida:ko                                                           0                                              5258
+bienvenida:ko                                                           1                                              2
+confirmacion direccion correo:confirmar pdf2mail                        0                                              5161
+confirmacion direccion correo:confirmar pdf2mail                        1                                              99
+consentimiento permisos:ok                                              0                                              5250
+consentimiento permisos:ok                                              1                                              10
+consigue una nueva clave:bienvenido vamos a iniciar el cambio de clave  0                                              5260
+consigue una nueva clave:confirma tu solicitud                          0                                              5260
+consigue una nueva clave:elige tu clave                                 0                                              5260
+consigue una nueva clave:error                                          0                                              5260
+consigue una nueva clave:identificate                                   0                                              5260
+consigue una nueva clave:perfil                                         0                                              5260
+consigue una nueva clave:se ha actualizado la clave                     0                                              5260
+consigue una nueva clave:token ya validado                              0                                              5260
+datos personales:acceso                                                 0                                              3621
+datos personales:acceso                                                 1                                              1639
+datos personales:autorizados                                            0                                              5260
+datos personales:contratos y documentos                                 0                                              3353
+datos personales:contratos y documentos                                 1                                              1907
+datos personales:facturacion                                            0                                              3488
+datos personales:facturacion                                            1                                              1772
+datos personales:permanencias                                           0                                              3292
+datos personales:permanencias                                           1                                              1968
+datos personales:preferencias                                           0                                              3712
+datos personales:preferencias                                           1                                              1548
+datos personales:privacidad de tus datos                                0                                              5258
+datos personales:privacidad de tus datos                                1                                              2
+datos personales:titular                                                1                                              3128
+datos personales:titular                                                0                                              2132
+gestion cuentas correo:correo ono                                       0                                              5259
+gestion cuentas correo:correo ono                                       1                                              1
+home:mis productos                                                      0                                              5252
+home:mis productos                                                      1                                              8
+home:producto contratado                                                0                                              5259
+home:producto contratado                                                1                                              1
+imperlogin:imperloginintermedia                                         0                                              5260
+mi adsl y linea fija:resumen de mi linea                                0                                              5260
+mi fibra:mi consumo                                                     0                                              5260
+mi fibra:mi tarifa                                                      0                                              5260
+mi fibra:resumen de mi linea                                            0                                              5260
+mi modem usb:mi tarifa                                                  0                                              5260
+mi modem usb:opciones y configuracion                                   0                                              5260
+mi modem usb:resumen                                                    0                                              5260
+mi movil:mi consumo                                                     0                                              5260
+mi movil:opciones y configuracion                                       0                                              5260
+mi movil:resumen de mi linea                                            0                                              5260
+mi wifi:activar wifi                                                    0                                              5229
+mi wifi:activar wifi                                                    1                                              31
+mi wifi:cambiar canal                                                   0                                              5243
+mi wifi:cambiar canal                                                   1                                              17
+mi wifi:cambiar contrasena                                              0                                              5234
+mi wifi:cambiar contrasena                                              1                                              26
+mi wifi:cambiar contrasena wifi                                         0                                              5253
+mi wifi:cambiar contrasena wifi                                         1                                              7
+mi wifi:cambiar nombre red                                              0                                              5229
+mi wifi:cambiar nombre red                                              1                                              31
+mi wifi:cambio tipo seguridad                                           0                                              5256
+mi wifi:cambio tipo seguridad                                           1                                              4
+mi wifi:desactivar wifi                                                 0                                              5228
+mi wifi:desactivar wifi                                                 1                                              32
+mi wifi:detalle de factura                                              0                                              5259
+mi wifi:detalle de factura                                              1                                              1
+mi wifi:ko                                                              0                                              5256
+mi wifi:ko                                                              1                                              4
+mi wifi:llamadas                                                        0                                              5259
+mi wifi:llamadas                                                        1                                              1
+mi wifi:mis productos                                                   0                                              5239
+mi wifi:mis productos                                                   1                                              21
+mi wifi:nacional                                                        0                                              5258
+mi wifi:nacional                                                        1                                              2
+mi wifi:ok                                                              0                                              5254
+mi wifi:ok                                                              1                                              6
+mi wifi:pedidos en curso                                                0                                              5255
+mi wifi:pedidos en curso                                                1                                              5
+mi wifi:resumen                                                         0                                              5259
+mi wifi:resumen                                                         1                                              1
+mi wifi:upgrade                                                         0                                              5259
+mi wifi:upgrade                                                         1                                              1
+mi wifi:upgrade perfil                                                  0                                              5258
+mi wifi:upgrade perfil                                                  1                                              2
+mis facturas:abonos                                                     0                                              4458
+mis facturas:abonos                                                     1                                              802
+mis facturas:estado de mis pagos                                        0                                              3492
+mis facturas:estado de mis pagos                                        1                                              1768
+mis facturas:facturas de dispositivos                                   0                                              3266
+mis facturas:facturas de dispositivos                                   1                                              1994
+mis facturas:mis facturas                                               1                                              4384
+mis facturas:mis facturas                                               0                                              876
+mis facturas:opciones                                                   0                                              3474
+mis facturas:opciones                                                   1                                              1786
+mis productos:consumo                                                   1                                              3245
+mis productos:consumo                                                   0                                              2015
+mis productos:decodificadores                                           0                                              4940
+mis productos:decodificadores                                           1                                              320
+mis productos:home                                                      1                                              5023
+mis productos:home                                                      0                                              237
+mis productos:movil y sim                                               0                                              3554
+mis productos:movil y sim                                               1                                              1706
+mis productos:nacional                                                  0                                              5245
+mis productos:nacional                                                  1                                              15
+mis productos:opciones                                                  0                                              3925
+mis productos:opciones                                                  1                                              1335
+mis productos:pedidos en curso                                          0                                              5255
+mis productos:pedidos en curso                                          1                                              5
+mis productos:producto contratado                                       1                                              4414
+mis productos:producto contratado                                       0                                              846
+mis productos:que tienes contratado                                     0                                              4879
+mis productos:que tienes contratado                                     1                                              381
+mis productos:recarga y anticipo                                        0                                              5240
+mis productos:recarga y anticipo                                        1                                              20
+mis productos:saldo y consumo                                           0                                              5161
+mis productos:saldo y consumo                                           1                                              99
+mis productos:tarifa                                                    1                                              3106
+mis productos:tarifa                                                    0                                              2154
+mis productos:tarifas                                                   0                                              5026
+mis productos:tarifas                                                   1                                              234
+mis productos:v by vodafone                                             0                                              4142
+mis productos:v by vodafone                                             1                                              1118
+mis productos:vodafone tv                                               0                                              5257
+mis productos:vodafone tv                                               1                                              3
+pagar factura:que es                                                    0                                              5260
+popup lego:no bloqueante                                                0                                              4674
+popup lego:no bloqueante                                                1                                              586
+primera factura:producto contratado                                     0                                              5259
+primera factura:producto contratado                                     1                                              1
+que necesitas:averias                                                   0                                              5260
+que necesitas:compromiso de permanencia                                 0                                              5260
+que necesitas:facturas                                                  0                                              5260
+que necesitas:mis datos personales                                      0                                              5260
+rebienvenida:mis productos                                              0                                              5259
+rebienvenida:mis productos                                              1                                              1
+recuperar clave:escribe tu clave                                        0                                              5260
+recuperar clave:escribe tu mail                                         0                                              5260
+recuperar clave:verificar email                                         0                                              5260
+registrate en mi vodafone:elige tu clave                                0                                              5260
+registrate en mi vodafone:error                                         0                                              5260
+registrate en mi vodafone:identificate                                  0                                              5260
+registrate en mi vodafone:perfil                                        0                                              5260
+registrate en mi vodafone:revisa tu bandeja de entrada                  0                                              5260
+registrate en mi vodafone:usuario y clave                               0                                              5260
+registro:confirmacion                                                   0                                              5260
+registro:elige tu usuario                                               0                                              5260
+registro:popup numero ono                                               0                                              5260
+registro:selecciona tu perfil                                           0                                              5260
+registro:valida tus datos                                               0                                              5260
+registro:valida tus datos mail registrado                               0                                              5260
+resumen:nacional                                                        0                                              5251
+resumen:nacional                                                        1                                              9
+seguimiento de pedidos:detalle de factura                               0                                              5258
+seguimiento de pedidos:detalle de factura                               1                                              2
+seguimiento de pedidos:mis productos                                    0                                              5231
+seguimiento de pedidos:mis productos                                    1                                              29
+seguimiento de pedidos:pedidos completados                              0                                              5139
+seguimiento de pedidos:pedidos completados                              1                                              121
+seguimiento de pedidos:pedidos en curso                                 0                                              4737
+seguimiento de pedidos:pedidos en curso                                 1                                              523
+seguimiento de pedidos:resumen                                          0                                              5258
+seguimiento de pedidos:resumen                                          1                                              2
+servicios antiguos ono:mis productos                                    0                                              5259
+servicios antiguos ono:mis productos                                    1                                              1
+servicios antiguos ono:modificar clave                                  0                                              5203
+servicios antiguos ono:modificar clave                                  1                                              57
+solucion de incidencias:averias                                         0                                              5260
+subsection 1 (prop1):subsection 2 (prop2)                               0                                              5260
+super wifi:contratacion                                                 0                                              5248
+super wifi:contratacion                                                 1                                              12
+te ayudamos:activar wifi                                                0                                              5258
+te ayudamos:activar wifi                                                1                                              2
+te ayudamos:detalle de factura                                          0                                              5257
+te ayudamos:detalle de factura                                          1                                              3
+te ayudamos:ko                                                          0                                              5116
+te ayudamos:ko                                                          1                                              144
+te ayudamos:mis productos                                               0                                              5236
+te ayudamos:mis productos                                               1                                              24
+te ayudamos:ok                                                          0                                              5259
+te ayudamos:ok                                                          1                                              1
+te ayudamos:pedidos en curso                                            0                                              5256
+te ayudamos:pedidos en curso                                            1                                              4
+te ayudamos:resumen                                                     0                                              5259
+te ayudamos:resumen                                                     1                                              1
+te puede interesar:contacta                                             0                                              5260
+te puede interesar:mobile connect                                       0                                              5260
+te puede interesar:por ser de vodafone                                  0                                              5260
+te puede interesar:seguimiento                                          0                                              5260
+television y mas:amazon prime                                           0                                              4821
+television y mas:amazon prime                                           1                                              439
+television y mas:filmin                                                 0                                              5253
+television y mas:filmin                                                 1                                              7
+television y mas:hbo espana                                             0                                              4652
+television y mas:hbo espana                                             1                                              608
+television y mas:television                                             0                                              3383
+television y mas:television                                             1                                              1877
+television y mas:tidal                                                  0                                              4975
+television y mas:tidal                                                  1                                              285
+television y mas:tv online                                              0                                              4530
+television y mas:tv online                                              1                                              730
+television:tv filmin                                                    0                                              4939
+television:tv filmin                                                    1                                              321
+vodafone tv:resumen tv                                                  0                                              4704
+vodafone tv:resumen tv                                                  1                                              556
+vodafone tv:upselling                                                   0                                              5253
+vodafone tv:upselling                                                   1                                              7
+cliente activo                                                          1                                              5008
+cliente activo                                                          0                                              252
+desconectado                                                            0                                              5260
+pendiente de cambio                                                     0                                              4453
+pendiente de cambio                                                     1                                              807
+pendiente de desconectar                                                0                                              5246
+pendiente de desconectar                                                1                                              14
+pendiente de instalar                                                   0                                              5164
+pendiente de instalar                                                   1                                              96
+pendiente de reconectar                                                 0                                              5260
+Country                                                                 Spain                                          5145
+Country                                                                 France                                         20
+Country                                                                 United Kingdom                                 19
+Country                                                                 United States                                  17
+Country                                                                 Germany                                        12
+Country                                                                 -                                              6
+Country                                                                 Portugal                                       6
+Country                                                                 Netherlands                                    5
+Country                                                                 Switzerland                                    4
+Country                                                                 Argentina                                      3
+Region                                                                  Madrid, Comunidad de                           1234
+Region                                                                  Andalucia                                      844
+Region                                                                  Valenciana, Comunidad                          668
+Region                                                                  Catalunya                                      635
+Region                                                                  Castilla y Leon                                243
+Region                                                                  Galicia                                        213
+Region                                                                  Canarias                                       188
+Region                                                                  Aragon                                         177
+Region                                                                  Pais Vasco                                     170
+Region                                                                  Castilla-La Mancha                             162
+City                                                                    Madrid                                         1213
+City                                                                    Barcelona                                      487
+City                                                                    Valencia                                       369
+City                                                                    Sevilla                                        183
+City                                                                    Alicante                                       172
+City                                                                    Zaragoza                                       150
+City                                                                    Murcia                                         141
+City                                                                    Malaga                                         116
+City                                                                    Palma                                          93
+City                                                                    Pontevedra                                     75
+PrimaryHardwareType                                                     Desktop                                        5189
+PrimaryHardwareType                                                     Mobile Phone                                   43
+PrimaryHardwareType                                                     Tablet                                         26
+PrimaryHardwareType                                                     (NULL)                                         1
+PrimaryHardwareType                                                     Set Top Box                                    1
+OSName                                                                  Windows 10                                     2824
+OSName                                                                  Windows 7                                      1306
+OSName                                                                  OS X                                           515
+OSName                                                                  Windows 8.1                                    248
+OSName                                                                  Windows XP                                     136
+OSName                                                                  Linux                                          55
+OSName                                                                  Windows Vista                                  53
+OSName                                                                  Android                                        39
+OSName                                                                  iOS                                            34
+OSName                                                                  Windows 8                                      24
+BrowserName                                                             Chrome                                         3589
+BrowserName                                                             Firefox                                        803
+BrowserName                                                             Edge                                           435
+BrowserName                                                             Safari                                         302
+BrowserName                                                             Opera                                          79
+BrowserName                                                             Chrome Mobile                                  40
+BrowserName                                                             (NULL)                                         3
+BrowserName                                                             Chromium                                       2
+BrowserName                                                             Samsung Browser                                2
+BrowserName                                                             Opera Mobile                                   1
+Recommendation                                                          0                                              1384
+Recommendation                                                          10                                             771
+Recommendation                                                          8                                              687
+Recommendation                                                          9                                              661
+Recommendation                                                          7                                              452
+Recommendation                                                          5                                              370
+Recommendation                                                          6                                              284
+Recommendation                                                          2                                              180
+Recommendation                                                          1                                              160
+Recommendation                                                          3                                              157
+pageName                                                                mi vodafone:mis productos:producto contratado  1192
+pageName                                                                mi vodafone:datos personales:titular           855
+pageName                                                                mi vodafone:avisos                             569
+pageName                                                                mi vodafone:mis productos:tarifa:mi tarifa     563
+pageName                                                                mi vodafone:datos personales:facturacion       535
+pageName                                                                mi vodafone:mis productos:movil y sim:sim      312
+pageName                                                                mi vodafone:mis productos:home                 306
+pageName                                                                mi vodafone:mis facturas:abonos                179
+pageName                                                                mi vodafone:mis facturas:estado de mis pagos   173
+pageName                                                                mi vodafone:mis facturas:opciones              121
+paginasenlavisita                                                       7                                              699
+paginasenlavisita                                                       6                                              642
+paginasenlavisita                                                       8                                              472
+paginasenlavisita                                                       9                                              408
+paginasenlavisita                                                       5                                              364
+paginasenlavisita                                                       10                                             337
+paginasenlavisita                                                       11                                             267
+paginasenlavisita                                                       12                                             215
+paginasenlavisita                                                       13                                             206
+paginasenlavisita                                                       4                                              168
+platform                                                                estandar                                       5256
+platform                                                                -                                              3
+platform                                                                responsive                                     1
+VERBATIM                                                                True                                           5260
+NPS                                                                     Detractor                                      2689
+NPS                                                                     Promotor                                       1432
+NPS                                                                     Neutro                                         1139

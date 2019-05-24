@@ -1,1027 +1,166 @@
-  1. "USER_ID"
-
-	Type of data:          Number
-	Contains null values:  False
-	Unique values:         1166
-	Smallest value:        251.926
-	Largest value:         985.589.181
-	Sum:                   316.988.609.764
-	Mean:                  241.055.977,007
-	Median:                105.573.786
-	StDev:                 263.734.682,164
-	Most common values:    106.021.225 (6x)
-	                       104.157.984 (4x)
-	                       104.876.854 (4x)
-	                       104.197.598 (3x)
-	                       166.789.401 (3x)
-
-  2. "visitorstatus"
-
-	Type of data:          Text
-	Contains null values:  False
-	Unique values:         3
-	Longest value:         19 characters
-	Most common values:    particular postpago (1281x)
-	                       particular prepago (25x)
-	                       Unknown (9x)
-
-  3. "prepaid_postpaid"
-
-	Type of data:          Text
-	Contains null values:  False
-	Unique values:         3
-	Longest value:         19 characters
-	Most common values:    particular postpago (1272x)
-	                       prepago (25x)
-	                       velocidad maxima (18x)
-
-  4. "purchasedpackages"
-
-	Type of data:          Text
-	Contains null values:  False
-	Unique values:         4
-	Longest value:         10 characters
-	Most common values:    one (819x)
-	                       no paquete (390x)
-	                       paquete (97x)
-	                       completo (9x)
-
-  5. "loginprofile"
-
-	Type of data:          Text
-	Contains null values:  False
-	Unique values:         5
-	Longest value:         23 characters
-	Most common values:    completo (1285x)
-	                       ligero (21x)
-	                       ver producto contratado (7x)
-	                       sva:error carga (1x)
-	                       error carga facturas (1x)
-
-  6. "clientdebt"
-
-	Type of data:          Text
-	Contains null values:  False
-	Unique values:         5
-	Longest value:         10 characters
-	Most common values:    False (1229x)
-	                       True (68x)
-	                       new (8x)
-	                       repeat (8x)
-	                       new|repeat (2x)
-
-  7. "navigationspeed"
-
-	Type of data:          Boolean
-	Contains null values:  False
-	Unique values:         2
-	Most common values:    True (782x)
-	                       False (533x)
-
-  8. "ERROR"
-
-	Type of data:          Boolean
-	Contains null values:  False
-	Unique values:         2
-	Most common values:    True (850x)
-	                       False (465x)
-
-  9. "abonos:sin abonos"
-
-	Type of data:          Boolean
-	Contains null values:  False
-	Unique values:         2
-	Most common values:    False (1049x)
-	                       True (266x)
-
- 10. "averias:averias"
-
-	Type of data:          Boolean
-	Contains null values:  False
-	Unique values:         2
-	Most common values:    False (990x)
-	                       True (325x)
-
- 11. "avisos:detalle de factura"
-
-	Type of data:          Boolean
-	Contains null values:  False
-	Unique values:         2
-	Most common values:    False (1301x)
-	                       True (14x)
-
- 12. "avisos:flujo autodiagnostico"
-
-	Type of data:          Boolean
-	Contains null values:  False
-	Unique values:         2
-	Most common values:    False (1314x)
-	                       True (1x)
-
- 13. "avisos:ko"
-
-	Type of data:          Boolean
-	Contains null values:  False
-	Unique values:         2
-	Most common values:    False (1306x)
-	                       True (9x)
-
- 14. "avisos:mis productos"
-
-	Type of data:          Boolean
-	Contains null values:  False
-	Unique values:         2
-	Most common values:    False (1310x)
-	                       True (5x)
-
- 15. "avisos:nacional"
-
-	Type of data:          Boolean
-	Contains null values:  False
-	Unique values:         1
-	Most common values:    False (1315x)
-
- 16. "avisos:ok"
-
-	Type of data:          Boolean
-	Contains null values:  False
-	Unique values:         2
-	Most common values:    False (1314x)
-	                       True (1x)
-
- 17. "avisos:resumen"
-
-	Type of data:          Boolean
-	Contains null values:  False
-	Unique values:         1
-	Most common values:    False (1315x)
-
- 18. "avisos:upgrade"
-
-	Type of data:          Boolean
-	Contains null values:  False
-	Unique values:         2
-	Most common values:    False (1313x)
-	                       True (2x)
-
- 19. "avisos:upgrade perfil"
-
-	Type of data:          Boolean
-	Contains null values:  False
-	Unique values:         2
-	Most common values:    False (1310x)
-	                       True (5x)
-
- 20. "bienvenida:ko"
-
-	Type of data:          Boolean
-	Contains null values:  False
-	Unique values:         2
-	Most common values:    False (1313x)
-	                       True (2x)
-
- 21. "confirmacion direccion correo:confirmar pdf2mail"
-
-	Type of data:          Boolean
-	Contains null values:  False
-	Unique values:         2
-	Most common values:    False (1292x)
-	                       True (23x)
-
- 22. "consentimiento permisos:ko"
-
-	Type of data:          Boolean
-	Contains null values:  False
-	Unique values:         1
-	Most common values:    False (1315x)
-
- 23. "consigue una nueva clave:bienvenido vamos a iniciar el cambio de clave"
-
-	Type of data:          Boolean
-	Contains null values:  False
-	Unique values:         1
-	Most common values:    False (1315x)
-
- 24. "consigue una nueva clave:confirma tu solicitud"
-
-	Type of data:          Boolean
-	Contains null values:  False
-	Unique values:         1
-	Most common values:    False (1315x)
-
- 25. "consigue una nueva clave:elige tu clave"
-
-	Type of data:          Boolean
-	Contains null values:  False
-	Unique values:         1
-	Most common values:    False (1315x)
-
- 26. "consigue una nueva clave:identificate"
-
-	Type of data:          Boolean
-	Contains null values:  False
-	Unique values:         1
-	Most common values:    False (1315x)
-
- 27. "consigue una nueva clave:se ha actualizado la clave"
-
-	Type of data:          Boolean
-	Contains null values:  False
-	Unique values:         1
-	Most common values:    False (1315x)
-
- 28. "datos personales:acceso"
-
-	Type of data:          Boolean
-	Contains null values:  False
-	Unique values:         2
-	Most common values:    False (914x)
-	                       True (401x)
-
- 29. "datos personales:autorizados"
-
-	Type of data:          Boolean
-	Contains null values:  False
-	Unique values:         1
-	Most common values:    False (1315x)
-
- 30. "datos personales:contratos y documentos"
-
-	Type of data:          Boolean
-	Contains null values:  False
-	Unique values:         2
-	Most common values:    False (813x)
-	                       True (502x)
-
- 31. "datos personales:facturacion"
-
-	Type of data:          Boolean
-	Contains null values:  False
-	Unique values:         2
-	Most common values:    False (858x)
-	                       True (457x)
-
- 32. "datos personales:permanencias"
-
-	Type of data:          Boolean
-	Contains null values:  False
-	Unique values:         2
-	Most common values:    False (804x)
-	                       True (511x)
-
- 33. "datos personales:preferencias"
-
-	Type of data:          Boolean
-	Contains null values:  False
-	Unique values:         2
-	Most common values:    False (915x)
-	                       True (400x)
-
- 34. "datos personales:privacidad de tus datos"
-
-	Type of data:          Boolean
-	Contains null values:  False
-	Unique values:         2
-	Most common values:    False (1314x)
-	                       True (1x)
-
- 35. "datos personales:titular"
-
-	Type of data:          Boolean
-	Contains null values:  False
-	Unique values:         2
-	Most common values:    True (789x)
-	                       False (526x)
-
- 36. "home:mis productos"
-
-	Type of data:          Boolean
-	Contains null values:  False
-	Unique values:         1
-	Most common values:    False (1315x)
-
- 37. "imperlogin:imperdiscriminador"
-
-	Type of data:          Boolean
-	Contains null values:  False
-	Unique values:         1
-	Most common values:    False (1315x)
-
- 38. "imperlogin:imperloginintermedia"
-
-	Type of data:          Boolean
-	Contains null values:  False
-	Unique values:         1
-	Most common values:    False (1315x)
-
- 39. "mi wifi:activar wifi"
-
-	Type of data:          Boolean
-	Contains null values:  False
-	Unique values:         2
-	Most common values:    False (1305x)
-	                       True (10x)
-
- 40. "mi wifi:cambiar canal"
-
-	Type of data:          Boolean
-	Contains null values:  False
-	Unique values:         2
-	Most common values:    False (1312x)
-	                       True (3x)
-
- 41. "mi wifi:cambiar contrasena"
-
-	Type of data:          Boolean
-	Contains null values:  False
-	Unique values:         2
-	Most common values:    False (1306x)
-	                       True (9x)
-
- 42. "mi wifi:cambiar contrasena wifi"
-
-	Type of data:          Boolean
-	Contains null values:  False
-	Unique values:         2
-	Most common values:    False (1314x)
-	                       True (1x)
-
- 43. "mi wifi:cambiar nombre red"
-
-	Type of data:          Boolean
-	Contains null values:  False
-	Unique values:         2
-	Most common values:    False (1308x)
-	                       True (7x)
-
- 44. "mi wifi:cambio tipo seguridad"
-
-	Type of data:          Boolean
-	Contains null values:  False
-	Unique values:         1
-	Most common values:    False (1315x)
-
- 45. "mi wifi:desactivar wifi"
-
-	Type of data:          Boolean
-	Contains null values:  False
-	Unique values:         2
-	Most common values:    False (1305x)
-	                       True (10x)
-
- 46. "mi wifi:flujo autodiagnostico"
-
-	Type of data:          Boolean
-	Contains null values:  False
-	Unique values:         1
-	Most common values:    False (1315x)
-
- 47. "mi wifi:ko"
-
-	Type of data:          Boolean
-	Contains null values:  False
-	Unique values:         2
-	Most common values:    False (1314x)
-	                       True (1x)
-
- 48. "mi wifi:mis productos"
-
-	Type of data:          Boolean
-	Contains null values:  False
-	Unique values:         1
-	Most common values:    False (1315x)
-
- 49. "mi wifi:ok"
-
-	Type of data:          Boolean
-	Contains null values:  False
-	Unique values:         2
-	Most common values:    False (1314x)
-	                       True (1x)
-
- 50. "mi wifi:resumen"
-
-	Type of data:          Boolean
-	Contains null values:  False
-	Unique values:         2
-	Most common values:    False (1314x)
-	                       True (1x)
-
- 51. "mi wifi:upgrade"
-
-	Type of data:          Boolean
-	Contains null values:  False
-	Unique values:         2
-	Most common values:    False (1314x)
-	                       True (1x)
-
- 52. "mi wifi:upgrade perfil"
-
-	Type of data:          Boolean
-	Contains null values:  False
-	Unique values:         2
-	Most common values:    False (1314x)
-	                       True (1x)
-
- 53. "mis facturas:abonos"
-
-	Type of data:          Boolean
-	Contains null values:  False
-	Unique values:         2
-	Most common values:    False (1096x)
-	                       True (219x)
-
- 54. "mis facturas:estado de mis pagos"
-
-	Type of data:          Boolean
-	Contains null values:  False
-	Unique values:         2
-	Most common values:    False (844x)
-	                       True (471x)
-
- 55. "mis facturas:facturas de dispositivos"
-
-	Type of data:          Boolean
-	Contains null values:  False
-	Unique values:         2
-	Most common values:    False (773x)
-	                       True (542x)
-
- 56. "mis facturas:mis facturas"
-
-	Type of data:          Boolean
-	Contains null values:  False
-	Unique values:         2
-	Most common values:    True (1123x)
-	                       False (192x)
-
- 57. "mis facturas:opciones"
-
-	Type of data:          Boolean
-	Contains null values:  False
-	Unique values:         2
-	Most common values:    False (825x)
-	                       True (490x)
-
- 58. "mis productos:consumo"
-
-	Type of data:          Boolean
-	Contains null values:  False
-	Unique values:         2
-	Most common values:    True (881x)
-	                       False (434x)
-
- 59. "mis productos:decodificadores"
-
-	Type of data:          Boolean
-	Contains null values:  False
-	Unique values:         2
-	Most common values:    False (1227x)
-	                       True (88x)
-
- 60. "mis productos:home"
-
-	Type of data:          Boolean
-	Contains null values:  False
-	Unique values:         2
-	Most common values:    True (1260x)
-	                       False (55x)
-
- 61. "mis productos:movil y sim"
-
-	Type of data:          Boolean
-	Contains null values:  False
-	Unique values:         2
-	Most common values:    False (831x)
-	                       True (484x)
-
- 62. "mis productos:nacional"
-
-	Type of data:          Boolean
-	Contains null values:  False
-	Unique values:         2
-	Most common values:    False (1312x)
-	                       True (3x)
-
- 63. "mis productos:opciones"
-
-	Type of data:          Boolean
-	Contains null values:  False
-	Unique values:         2
-	Most common values:    False (1018x)
-	                       True (297x)
-
- 64. "mis productos:producto contratado"
-
-	Type of data:          Boolean
-	Contains null values:  False
-	Unique values:         2
-	Most common values:    True (1133x)
-	                       False (182x)
-
- 65. "mis productos:que tienes contratado"
-
-	Type of data:          Boolean
-	Contains null values:  False
-	Unique values:         2
-	Most common values:    False (1269x)
-	                       True (46x)
-
- 66. "mis productos:recarga y anticipo"
-
-	Type of data:          Boolean
-	Contains null values:  False
-	Unique values:         2
-	Most common values:    False (1310x)
-	                       True (5x)
-
- 67. "mis productos:saldo y consumo"
-
-	Type of data:          Boolean
-	Contains null values:  False
-	Unique values:         2
-	Most common values:    False (1292x)
-	                       True (23x)
-
- 68. "mis productos:tarifa"
-
-	Type of data:          Boolean
-	Contains null values:  False
-	Unique values:         2
-	Most common values:    True (857x)
-	                       False (458x)
-
- 69. "mis productos:tarifas"
-
-	Type of data:          Boolean
-	Contains null values:  False
-	Unique values:         2
-	Most common values:    False (1278x)
-	                       True (37x)
-
- 70. "mis productos:v by vodafone"
-
-	Type of data:          Boolean
-	Contains null values:  False
-	Unique values:         2
-	Most common values:    False (1012x)
-	                       True (303x)
-
- 71. "mis productos:vodafone tv"
-
-	Type of data:          Boolean
-	Contains null values:  False
-	Unique values:         2
-	Most common values:    False (1314x)
-	                       True (1x)
-
- 72. "popup lego:no bloqueante"
-
-	Type of data:          Boolean
-	Contains null values:  False
-	Unique values:         2
-	Most common values:    False (1229x)
-	                       True (86x)
-
- 73. "que necesitas:compromiso de permanencia"
-
-	Type of data:          Boolean
-	Contains null values:  False
-	Unique values:         1
-	Most common values:    False (1315x)
-
- 74. "que necesitas:facturas"
-
-	Type of data:          Boolean
-	Contains null values:  False
-	Unique values:         1
-	Most common values:    False (1315x)
-
- 75. "que necesitas:mis datos personales"
-
-	Type of data:          Boolean
-	Contains null values:  False
-	Unique values:         1
-	Most common values:    False (1315x)
-
- 76. "recuperar clave:escribe tu clave"
-
-	Type of data:          Boolean
-	Contains null values:  False
-	Unique values:         1
-	Most common values:    False (1315x)
-
- 77. "recuperar clave:verificar email"
-
-	Type of data:          Boolean
-	Contains null values:  False
-	Unique values:         1
-	Most common values:    False (1315x)
-
- 78. "registrate en mi vodafone:elige tu clave"
-
-	Type of data:          Boolean
-	Contains null values:  False
-	Unique values:         1
-	Most common values:    False (1315x)
-
- 79. "registrate en mi vodafone:enhorabuena"
-
-	Type of data:          Boolean
-	Contains null values:  False
-	Unique values:         1
-	Most common values:    False (1315x)
-
- 80. " se ha cambiado el usuario"
-
-	Type of data:          Boolean
-	Contains null values:  False
-	Unique values:         1
-	Most common values:    False (1315x)
-
- 81. "registrate en mi vodafone:error"
-
-	Type of data:          Boolean
-	Contains null values:  False
-	Unique values:         1
-	Most common values:    False (1315x)
-
- 82. "registrate en mi vodafone:identificate"
-
-	Type of data:          Boolean
-	Contains null values:  False
-	Unique values:         1
-	Most common values:    False (1315x)
-
- 83. "registrate en mi vodafone:perfil"
-
-	Type of data:          Boolean
-	Contains null values:  False
-	Unique values:         1
-	Most common values:    False (1315x)
-
- 84. "registrate en mi vodafone:revisa tu bandeja de entrada"
-
-	Type of data:          Boolean
-	Contains null values:  False
-	Unique values:         1
-	Most common values:    False (1315x)
-
- 85. "registro:confirmacion"
-
-	Type of data:          Boolean
-	Contains null values:  False
-	Unique values:         1
-	Most common values:    False (1315x)
-
- 86. "registro:popup numero ono"
-
-	Type of data:          Boolean
-	Contains null values:  False
-	Unique values:         1
-	Most common values:    False (1315x)
-
- 87. "registro:selecciona tu perfil"
-
-	Type of data:          Boolean
-	Contains null values:  False
-	Unique values:         2
-	Most common values:    False (1311x)
-	                       True (4x)
-
- 88. "resumen:nacional"
-
-	Type of data:          Boolean
-	Contains null values:  False
-	Unique values:         1
-	Most common values:    False (1315x)
-
- 89. "seguimiento de pedidos:mis productos"
-
-	Type of data:          Boolean
-	Contains null values:  False
-	Unique values:         1
-	Most common values:    False (1315x)
-
- 90. "seguimiento de pedidos:pedidos completados"
-
-	Type of data:          Boolean
-	Contains null values:  False
-	Unique values:         2
-	Most common values:    False (1313x)
-	                       True (2x)
-
- 91. "seguimiento de pedidos:pedidos en curso"
-
-	Type of data:          Boolean
-	Contains null values:  False
-	Unique values:         2
-	Most common values:    False (1298x)
-	                       True (17x)
-
- 92. "servicios antiguos ono:modificar clave"
-
-	Type of data:          Boolean
-	Contains null values:  False
-	Unique values:         1
-	Most common values:    False (1315x)
-
- 93. "super wifi:contratacion"
-
-	Type of data:          Boolean
-	Contains null values:  False
-	Unique values:         1
-	Most common values:    False (1315x)
-
- 94. "te ayudamos:detalle de factura"
-
-	Type of data:          Boolean
-	Contains null values:  False
-	Unique values:         2
-	Most common values:    False (1313x)
-	                       True (2x)
-
- 95. "te ayudamos:ko"
-
-	Type of data:          Boolean
-	Contains null values:  False
-	Unique values:         1
-	Most common values:    False (1315x)
-
- 96. "te ayudamos:mis productos"
-
-	Type of data:          Boolean
-	Contains null values:  False
-	Unique values:         1
-	Most common values:    False (1315x)
-
- 97. "te puede interesar:contacta"
-
-	Type of data:          Boolean
-	Contains null values:  False
-	Unique values:         2
-	Most common values:    False (1308x)
-	                       True (7x)
-
- 98. "television y mas:amazon prime"
-
-	Type of data:          Boolean
-	Contains null values:  False
-	Unique values:         2
-	Most common values:    False (1312x)
-	                       True (3x)
-
- 99. "television y mas:filmin"
-
-	Type of data:          Boolean
-	Contains null values:  False
-	Unique values:         2
-	Most common values:    False (1153x)
-	                       True (162x)
-
-100. "television y mas:hbo espana"
-
-	Type of data:          Boolean
-	Contains null values:  False
-	Unique values:         2
-	Most common values:    False (799x)
-	                       True (516x)
-
-101. "television y mas:television"
-
-	Type of data:          Boolean
-	Contains null values:  False
-	Unique values:         2
-	Most common values:    False (1242x)
-	                       True (73x)
-
-102. "television y mas:tidal"
-
-	Type of data:          Boolean
-	Contains null values:  False
-	Unique values:         2
-	Most common values:    False (1127x)
-	                       True (188x)
-
-103. "television y mas:tv online"
-
-	Type of data:          Boolean
-	Contains null values:  False
-	Unique values:         2
-	Most common values:    False (1231x)
-	                       True (84x)
-
-104. "television:tv filmin"
-
-	Type of data:          Boolean
-	Contains null values:  False
-	Unique values:         2
-	Most common values:    False (1149x)
-	                       True (166x)
-
-105. "vodafone tv:resumen tv"
-
-	Type of data:          Boolean
-	Contains null values:  False
-	Unique values:         2
-	Most common values:    False (1314x)
-	                       True (1x)
-
-106. "vodafone tv:upselling"
-
-	Type of data:          Boolean
-	Contains null values:  False
-	Unique values:         2
-	Most common values:    True (1232x)
-	                       False (83x)
-
-107. "cliente activo"
-
-	Type of data:          Boolean
-	Contains null values:  False
-	Unique values:         1
-	Most common values:    False (1315x)
-
-108. "desconectado"
-
-	Type of data:          Boolean
-	Contains null values:  False
-	Unique values:         2
-	Most common values:    False (1073x)
-	                       True (242x)
-
-109. "pendiente de cambio"
-
-	Type of data:          Boolean
-	Contains null values:  False
-	Unique values:         2
-	Most common values:    False (1311x)
-	                       True (4x)
-
-110. "pendiente de desconectar"
-
-	Type of data:          Boolean
-	Contains null values:  False
-	Unique values:         2
-	Most common values:    False (1291x)
-	                       True (24x)
-
-111. "pendiente de instalar"
-
-	Type of data:          Boolean
-	Contains null values:  False
-	Unique values:         1
-	Most common values:    False (1315x)
-
-112. "pendiente de reconectar"
-
-	Type of data:          Boolean
-	Contains null values:  True (excluded from calculations)
-	Unique values:         1
-	Most common values:    None (1315x)
-
-113. "Country"
-
-	Type of data:          Text
-	Contains null values:  False
-	Unique values:         13
-	Longest value:         14 characters
-	Most common values:    Spain (1281x)
-	                       United Kingdom (9x)
-	                       France (7x)
-	                       Germany (4x)
-	                       United States (4x)
-
-114. "Region"
-
-	Type of data:          Text
-	Contains null values:  False
-	Unique values:         35
-	Longest value:         27 characters
-	Most common values:    Madrid, Comunidad de (295x)
-	                       Andalucia (222x)
-	                       Valenciana, Comunidad (181x)
-	                       Catalunya (148x)
-	                       Castilla y Leon (63x)
-
-115. "City"
-
-	Type of data:          Text
-	Contains null values:  False
-	Unique values:         198
-	Longest value:         26 characters
-	Most common values:    Madrid (292x)
-	                       Barcelona (110x)
-	                       Valencia (101x)
-	                       Murcia (43x)
-	                       Alicante (42x)
-
-116. "PrimaryHardwareType"
-
-	Type of data:          Text
-	Contains null values:  True (excluded from calculations)
-	Unique values:         5
-	Longest value:         12 characters
-	Most common values:    Desktop (1250x)
-	                       Mobile Phone (41x)
-	                       Tablet (22x)
-	                       None (1x)
-	                       Set Top Box (1x)
-
-117. "OSName"
-
-	Type of data:          Text
-	Contains null values:  False
-	Unique values:         12
-	Longest value:         14 characters
-	Most common values:    Windows 10 (622x)
-	                       Windows 7 (336x)
-	                       OS X (149x)
-	                       Windows 8.1 (59x)
-	                       Windows XP (51x)
-
-118. "BrowserName"
-
-	Type of data:          Text
-	Contains null values:  False
-	Unique values:         9
-	Longest value:         15 characters
-	Most common values:    Chrome (875x)
-	                       Firefox (174x)
-	                       Safari (111x)
-	                       Edge (104x)
-	                       Chrome Mobile (40x)
-
-119. "Recommendation"
-
-	Type of data:          Number
-	Contains null values:  False
-	Unique values:         11
-	Smallest value:        0
-	Largest value:         10
-	Sum:                   6.953
-	Mean:                  5,287
-	Median:                6
-	StDev:                 3,849
-	Most common values:    0 (333x)
-	                       10 (212x)
-	                       9 (167x)
-	                       8 (159x)
-	                       7 (112x)
-
-120. "pageName"
-
-	Type of data:          Text
-	Contains null values:  False
-	Unique values:         30
-	Longest value:         63 characters
-	Most common values:    mi vodafone:mis productos:producto contratado (329x)
-	                       mi vodafone:datos personales:titular (193x)
-	                       mi vodafone:mis productos:tarifa:mi tarifa (162x)
-	                       mi vodafone:avisos (129x)
-	                       mi vodafone:datos personales:facturacion (114x)
-
-121. "paginasenlavisita"
-
-	Type of data:          Number
-	Contains null values:  False
-	Unique values:         50
-	Smallest value:        3
-	Largest value:         83
-	Sum:                   16.293
-	Mean:                  12,39
-	Median:                9
-	StDev:                 9,471
-	Most common values:    6 (171x)
-	                       7 (168x)
-	                       9 (104x)
-	                       8 (104x)
-	                       5 (82x)
-
-122. "platform"
-
-	Type of data:          Text
-	Contains null values:  False
-	Unique values:         2
-	Longest value:         8 characters
-	Most common values:    estandar (1312x)
-	                       - (3x)
-
-123. "VERBATIM"
-
-	Type of data:          Boolean
-	Contains null values:  False
-	Unique values:         1
-	Most common values:    True (1315x)
-
-124. "NPS"
-
-	Type of data:          Text
-	Contains null values:  False
-	Unique values:         3
-	Longest value:         9 characters
-	Most common values:    Detractor (665x)
-	                       Promotor (379x)
-	                       Neutro (271x)
-
-Row count: 1315
+field                                                                   type     sum            min                  max                                 min_length  max_length  mean                    stddev                median     mode                                           cardinality
+USER_ID                                                                 Integer  1160282012273  155857               996959061                           6           9           220585933.8922053       259493651.4795228     105281173  105512209                                      4844
+visitorstatus                                                           Unicode                 particular postpago  particular prepago                  18          19                                                                   particular postpago                            2
+prepaid_postpaid                                                        Unicode                 particular postpago  prepago                             7           19                                                                   particular postpago                            2
+purchasedpackages                                                       Unicode                 no paquete           paquete                             3           10                                                                   one                                            3
+loginprofile                                                            Unicode                 completo             ligero                              6           8                                                                    completo                                       2
+clientdebt                                                              Unicode                 False                True                                4           5                                                                    False                                          2
+navigationspeed                                                         Unicode                 False                True                                4           5                                                                    True                                           2
+ERROR                                                                   Unicode                 False                True                                4           5                                                                    True                                           2
+abonos:sin abonos                                                       Integer  994            0                    1                                   1           1           0.18897338403041813     0.39148747637505565   0          0                                              2
+averias:averias                                                         Integer  1143           0                    1                                   1           1           0.21730038022813666     0.4124086868396967    0          0                                              2
+avisos:desactivar wifi                                                  Integer  1              0                    1                                   1           1           0.0001901140684410642   0.013786875102141365  0          0                                              2
+avisos:detalle de factura                                               Integer  55             0                    1                                   1           1           0.01045627376425857     0.10171991006300322   0          0                                              2
+avisos:flujo autodiagnostico                                            Integer  2              0                    1                                   1           1           0.0003802281368821305   0.01949573192896463   0          0                                              2
+avisos:ko                                                               Integer  31             0                    1                                   1           1           0.005893536121673014    0.07654281386031965   0          0                                              2
+avisos:mis productos                                                    Integer  125            0                    1                                   1           1           0.02376425855513306     0.15231388173918345   0          0                                              2
+avisos:nacional                                                         Integer  6              0                    1                                   1           1           0.001140684410646388    0.033754751513256555  0          0                                              2
+avisos:ok                                                               Integer  2              0                    1                                   1           1           0.0003802281368821282   0.019495731928964668  0          0                                              2
+avisos:pedidos en curso                                                 Integer  6              0                    1                                   1           1           0.0011406844106463877   0.033754751513256645  0          0                                              2
+avisos:producto contratado                                              Integer  1              0                    1                                   1           1           0.00019011406844106414  0.013786875102141365  0          0                                              2
+avisos:resumen                                                          Integer  2              0                    1                                   1           1           0.0003802281368821299   0.019495731928964668  0          0                                              2
+avisos:upgrade                                                          Integer  10             0                    1                                   1           1           0.001901140684410646    0.043560605465359746  0          0                                              2
+avisos:upgrade perfil                                                   Integer  16             0                    1                                   1           1           0.0030418250950570366   0.05506879692846147   0          0                                              2
+bienvenida:detalle de factura                                           Integer  2              0                    1                                   1           1           0.0003802281368821287   0.019495731928964668  0          0                                              2
+bienvenida:ko                                                           Integer  2              0                    1                                   1           1           0.00038022813688212925  0.01949573192896463   0          0                                              2
+confirmacion direccion correo:confirmar pdf2mail                        Integer  99             0                    1                                   1           1           0.018821292775665393    0.13589353080230915   0          0                                              2
+consentimiento permisos:ok                                              Integer  10             0                    1                                   1           1           0.001901140684410648    0.043560605465359746  0          0                                              2
+consigue una nueva clave:bienvenido vamos a iniciar el cambio de clave  Integer  0              0                    0                                   1           1           0                       0                     0          0                                              1
+consigue una nueva clave:confirma tu solicitud                          Integer  0              0                    0                                   1           1           0                       0                     0          0                                              1
+consigue una nueva clave:elige tu clave                                 Integer  0              0                    0                                   1           1           0                       0                     0          0                                              1
+consigue una nueva clave:error                                          Integer  0              0                    0                                   1           1           0                       0                     0          0                                              1
+consigue una nueva clave:identificate                                   Integer  0              0                    0                                   1           1           0                       0                     0          0                                              1
+consigue una nueva clave:perfil                                         Integer  0              0                    0                                   1           1           0                       0                     0          0                                              1
+consigue una nueva clave:se ha actualizado la clave                     Integer  0              0                    0                                   1           1           0                       0                     0          0                                              1
+consigue una nueva clave:token ya validado                              Integer  0              0                    0                                   1           1           0                       0                     0          0                                              1
+datos personales:acceso                                                 Integer  1639           0                    1                                   1           1           0.31159695817490446     0.4631460826035902    0          0                                              2
+datos personales:autorizados                                            Integer  0              0                    0                                   1           1           0                       0                     0          0                                              1
+datos personales:contratos y documentos                                 Integer  1907           0                    1                                   1           1           0.3625475285171107      0.48073570502225504   0          0                                              2
+datos personales:facturacion                                            Integer  1772           0                    1                                   1           1           0.3368821292775655      0.4726442216413733    0          0                                              2
+datos personales:permanencias                                           Integer  1968           0                    1                                   1           1           0.37414448669201483     0.48390121902097266   0          0                                              2
+datos personales:preferencias                                           Integer  1548           0                    1                                   1           1           0.29429657794676833     0.45572590682952085   0          0                                              2
+datos personales:privacidad de tus datos                                Integer  2              0                    1                                   1           1           0.0003802281368821291   0.019495731928964668  0          0                                              2
+datos personales:titular                                                Integer  3128           0                    1                                   1           1           0.5946768060836516      0.49095448097537464   1          1                                              2
+gestion cuentas correo:correo ono                                       Integer  1              0                    1                                   1           1           0.00019011406844106457  0.01378687510214136   0          0                                              2
+home:mis productos                                                      Integer  8              0                    1                                   1           1           0.0015209125475285205   0.03896921057131244   0          0                                              2
+home:producto contratado                                                Integer  1              0                    1                                   1           1           0.00019011406844106414  0.013786875102141365  0          0                                              2
+imperlogin:imperloginintermedia                                         Integer  0              0                    0                                   1           1           0                       0                     0          0                                              1
+mi adsl y linea fija:resumen de mi linea                                Integer  0              0                    0                                   1           1           0                       0                     0          0                                              1
+mi fibra:mi consumo                                                     Integer  0              0                    0                                   1           1           0                       0                     0          0                                              1
+mi fibra:mi tarifa                                                      Integer  0              0                    0                                   1           1           0                       0                     0          0                                              1
+mi fibra:resumen de mi linea                                            Integer  0              0                    0                                   1           1           0                       0                     0          0                                              1
+mi modem usb:mi tarifa                                                  Integer  0              0                    0                                   1           1           0                       0                     0          0                                              1
+mi modem usb:opciones y configuracion                                   Integer  0              0                    0                                   1           1           0                       0                     0          0                                              1
+mi modem usb:resumen                                                    Integer  0              0                    0                                   1           1           0                       0                     0          0                                              1
+mi movil:mi consumo                                                     Integer  0              0                    0                                   1           1           0                       0                     0          0                                              1
+mi movil:opciones y configuracion                                       Integer  0              0                    0                                   1           1           0                       0                     0          0                                              1
+mi movil:resumen de mi linea                                            Integer  0              0                    0                                   1           1           0                       0                     0          0                                              1
+mi wifi:activar wifi                                                    Integer  31             0                    1                                   1           1           0.005893536121673011    0.0765428138603195    0          0                                              2
+mi wifi:cambiar canal                                                   Integer  17             0                    1                                   1           1           0.0032319391634980997   0.05675820410074263   0          0                                              2
+mi wifi:cambiar contrasena                                              Integer  26             0                    1                                   1           1           0.004942965779467687    0.07013225269995758   0          0                                              2
+mi wifi:cambiar contrasena wifi                                         Integer  7              0                    1                                   1           1           0.0013307984790874529   0.036455828813723425  0          0                                              2
+mi wifi:cambiar nombre red                                              Integer  31             0                    1                                   1           1           0.00589353612167301     0.07654281386031976   0          0                                              2
+mi wifi:cambio tipo seguridad                                           Integer  4              0                    1                                   1           1           0.0007604562737642582   0.027565884350405828  0          0                                              2
+mi wifi:desactivar wifi                                                 Integer  32             0                    1                                   1           1           0.00608365019011405     0.07776014011354657   0          0                                              2
+mi wifi:detalle de factura                                              Integer  1              0                    1                                   1           1           0.00019011406844106436  0.013786875102141365  0          0                                              2
+mi wifi:ko                                                              Integer  4              0                    1                                   1           1           0.0007604562737642579   0.027565884350405877  0          0                                              2
+mi wifi:llamadas                                                        Integer  1              0                    1                                   1           1           0.00019011406844106427  0.013786875102141365  0          0                                              2
+mi wifi:mis productos                                                   Integer  21             0                    1                                   1           1           0.003992395437262382    0.06305914855066518   0          0                                              2
+mi wifi:nacional                                                        Integer  2              0                    1                                   1           1           0.00038022813688212925  0.019495731928964668  0          0                                              2
+mi wifi:ok                                                              Integer  6              0                    1                                   1           1           0.0011406844106463896   0.03375475151325655   0          0                                              2
+mi wifi:pedidos en curso                                                Integer  5              0                    1                                   1           1           0.000950570342205323    0.03081666364533709   0          0                                              2
+mi wifi:resumen                                                         Integer  1              0                    1                                   1           1           0.0001901140684410643   0.013786875102141365  0          0                                              2
+mi wifi:upgrade                                                         Integer  1              0                    1                                   1           1           0.0001901140684410642   0.013786875102141365  0          0                                              2
+mi wifi:upgrade perfil                                                  Integer  2              0                    1                                   1           1           0.0003802281368821284   0.019495731928964668  0          0                                              2
+mis facturas:abonos                                                     Integer  802            0                    1                                   1           1           0.15247148288973417     0.35947730080651746   0          0                                              2
+mis facturas:estado de mis pagos                                        Integer  1768           0                    1                                   1           1           0.33612167300380336     0.4723810897368004    0          0                                              2
+mis facturas:facturas de dispositivos                                   Integer  1994           0                    1                                   1           1           0.37908745247148273     0.48515992811666186   0          0                                              2
+mis facturas:mis facturas                                               Integer  4384           0                    1                                   1           1           0.8334600760456302      0.37256459531689956   1          1                                              2
+mis facturas:opciones                                                   Integer  1786           0                    1                                   1           1           0.33954372623574103     0.47355441525730463   0          0                                              2
+mis productos:consumo                                                   Integer  3245           0                    1                                   1           1           0.6169201520912552      0.486137509389018     1          1                                              2
+mis productos:decodificadores                                           Integer  320            0                    1                                   1           1           0.06083650190114063     0.23903016951333375   0          0                                              2
+mis productos:home                                                      Integer  5023           0                    1                                   1           1           0.9549429657794691      0.20742925996055123   1          1                                              2
+mis productos:movil y sim                                               Integer  1706           0                    1                                   1           1           0.324334600760456       0.468125696271858     0          0                                              2
+mis productos:nacional                                                  Integer  15             0                    1                                   1           1           0.0028517110266159757   0.05332521702568733   0          0                                              2
+mis productos:opciones                                                  Integer  1335           0                    1                                   1           1           0.25380228136882216     0.4351858032390339    0          0                                              2
+mis productos:pedidos en curso                                          Integer  5              0                    1                                   1           1           0.0009505703422053228   0.030816663645337104  0          0                                              2
+mis productos:producto contratado                                       Integer  4414           0                    1                                   1           1           0.8391634980988595      0.367380077790489     1          1                                              2
+mis productos:que tienes contratado                                     Integer  381            0                    1                                   1           1           0.07243346007604562     0.2592042706775052    0          0                                              2
+mis productos:recarga y anticipo                                        Integer  20             0                    1                                   1           1           0.0038022813688213      0.06154530059406334   0          0                                              2
+mis productos:saldo y consumo                                           Integer  99             0                    1                                   1           1           0.01882129277566536     0.13589353080230906   0          0                                              2
+mis productos:tarifa                                                    Integer  3106           0                    1                                   1           1           0.5904942965779467      0.49174259759234107   1          1                                              2
+mis productos:tarifas                                                   Integer  234            0                    1                                   1           1           0.044486692015209106    0.20617377682128502   0          0                                              2
+mis productos:v by vodafone                                             Integer  1118           0                    1                                   1           1           0.21254752851711076     0.4091101033198494    0          0                                              2
+mis productos:vodafone tv                                               Integer  3              0                    1                                   1           1           0.0005703422053231958   0.02387502701761865   0          0                                              2
+pagar factura:que es                                                    Integer  0              0                    0                                   1           1           0                       0                     0          0                                              1
+popup lego:no bloqueante                                                Integer  586            0                    1                                   1           1           0.11140684410646404     0.31463527963771276   0          0                                              2
+primera factura:producto contratado                                     Integer  1              0                    1                                   1           1           0.00019011406844106414  0.013786875102141365  0          0                                              2
+que necesitas:averias                                                   Integer  0              0                    0                                   1           1           0                       0                     0          0                                              1
+que necesitas:compromiso de permanencia                                 Integer  0              0                    0                                   1           1           0                       0                     0          0                                              1
+que necesitas:facturas                                                  Integer  0              0                    0                                   1           1           0                       0                     0          0                                              1
+que necesitas:mis datos personales                                      Integer  0              0                    0                                   1           1           0                       0                     0          0                                              1
+rebienvenida:mis productos                                              Integer  1              0                    1                                   1           1           0.00019011406844106525  0.013786875102141365  0          0                                              2
+recuperar clave:escribe tu clave                                        Integer  0              0                    0                                   1           1           0                       0                     0          0                                              1
+recuperar clave:escribe tu mail                                         Integer  0              0                    0                                   1           1           0                       0                     0          0                                              1
+recuperar clave:verificar email                                         Integer  0              0                    0                                   1           1           0                       0                     0          0                                              1
+registrate en mi vodafone:elige tu clave                                Integer  0              0                    0                                   1           1           0                       0                     0          0                                              1
+registrate en mi vodafone:error                                         Integer  0              0                    0                                   1           1           0                       0                     0          0                                              1
+registrate en mi vodafone:identificate                                  Integer  0              0                    0                                   1           1           0                       0                     0          0                                              1
+registrate en mi vodafone:perfil                                        Integer  0              0                    0                                   1           1           0                       0                     0          0                                              1
+registrate en mi vodafone:revisa tu bandeja de entrada                  Integer  0              0                    0                                   1           1           0                       0                     0          0                                              1
+registrate en mi vodafone:usuario y clave                               Integer  0              0                    0                                   1           1           0                       0                     0          0                                              1
+registro:confirmacion                                                   Integer  0              0                    0                                   1           1           0                       0                     0          0                                              1
+registro:elige tu usuario                                               Integer  0              0                    0                                   1           1           0                       0                     0          0                                              1
+registro:popup numero ono                                               Integer  0              0                    0                                   1           1           0                       0                     0          0                                              1
+registro:selecciona tu perfil                                           Integer  0              0                    0                                   1           1           0                       0                     0          0                                              1
+registro:valida tus datos                                               Integer  0              0                    0                                   1           1           0                       0                     0          0                                              1
+registro:valida tus datos mail registrado                               Integer  0              0                    0                                   1           1           0                       0                     0          0                                              1
+resumen:nacional                                                        Integer  9              0                    1                                   1           1           0.0017110266159695814   0.0413291544056859    0          0                                              2
+seguimiento de pedidos:detalle de factura                               Integer  2              0                    1                                   1           1           0.0003802281368821305   0.01949573192896463   0          0                                              2
+seguimiento de pedidos:mis productos                                    Integer  29             0                    1                                   1           1           0.005513307984790878    0.07404668405712536   0          0                                              2
+seguimiento de pedidos:pedidos completados                              Integer  121            0                    1                                   1           1           0.023003802281368838    0.1499154006830808    0          0                                              2
+seguimiento de pedidos:pedidos en curso                                 Integer  523            0                    1                                   1           1           0.09942965779467673     0.29923803392201065   0          0                                              2
+seguimiento de pedidos:resumen                                          Integer  2              0                    1                                   1           1           0.0003802281368821305   0.01949573192896463   0          0                                              2
+servicios antiguos ono:mis productos                                    Integer  1              0                    1                                   1           1           0.00019011406844106457  0.01378687510214136   0          0                                              2
+servicios antiguos ono:modificar clave                                  Integer  57             0                    1                                   1           1           0.010836501901140667    0.10353295189304364   0          0                                              2
+solucion de incidencias:averias                                         Integer  0              0                    0                                   1           1           0                       0                     0          0                                              1
+subsection 1 (prop1):subsection 2 (prop2)                               Integer  0              0                    0                                   1           1           0                       0                     0          0                                              1
+super wifi:contratacion                                                 Integer  12             0                    1                                   1           1           0.0022813688212927814   0.047709162407172975  0          0                                              2
+te ayudamos:activar wifi                                                Integer  2              0                    1                                   1           1           0.00038022813688212904  0.019495731928964668  0          0                                              2
+te ayudamos:detalle de factura                                          Integer  3              0                    1                                   1           1           0.0005703422053231943   0.02387502701761865   0          0                                              2
+te ayudamos:ko                                                          Integer  144            0                    1                                   1           1           0.027376425855513333    0.16317768586081538   0          0                                              2
+te ayudamos:mis productos                                               Integer  24             0                    1                                   1           1           0.004562737642585552    0.0673937613417629    0          0                                              2
+te ayudamos:ok                                                          Integer  1              0                    1                                   1           1           0.00019011406844106463  0.013786875102141365  0          0                                              2
+te ayudamos:pedidos en curso                                            Integer  4              0                    1                                   1           1           0.0007604562737642596   0.027565884350405828  0          0                                              2
+te ayudamos:resumen                                                     Integer  1              0                    1                                   1           1           0.00019011406844106436  0.013786875102141365  0          0                                              2
+te puede interesar:contacta                                             Integer  0              0                    0                                   1           1           0                       0                     0          0                                              1
+te puede interesar:mobile connect                                       Integer  0              0                    0                                   1           1           0                       0                     0          0                                              1
+te puede interesar:por ser de vodafone                                  Integer  0              0                    0                                   1           1           0                       0                     0          0                                              1
+te puede interesar:seguimiento                                          Integer  0              0                    0                                   1           1           0                       0                     0          0                                              1
+television y mas:amazon prime                                           Integer  439            0                    1                                   1           1           0.08346007604562718     0.2765763759833539    0          0                                              2
+television y mas:filmin                                                 Integer  7              0                    1                                   1           1           0.0013307984790874548   0.036455828813723445  0          0                                              2
+television y mas:hbo espana                                             Integer  608            0                    1                                   1           1           0.11558935361216732     0.3197318484975943    0          0                                              2
+television y mas:television                                             Integer  1877           0                    1                                   1           1           0.35684410646387693     0.47906825207466414   0          0                                              2
+television y mas:tidal                                                  Integer  285            0                    1                                   1           1           0.054182509505703295    0.22637748379502715   0          0                                              2
+television y mas:tv online                                              Integer  730            0                    1                                   1           1           0.1387832699619768      0.3457202249516783    0          0                                              2
+television:tv filmin                                                    Integer  321            0                    1                                   1           1           0.061026615969581775    0.239379130487357     0          0                                              2
+vodafone tv:resumen tv                                                  Integer  556            0                    1                                   1           1           0.10570342205323215     0.3074576533759869    0          0                                              2
+vodafone tv:upselling                                                   Integer  7              0                    1                                   1           1           0.001330798479087453    0.0364558288137235    0          0                                              2
+cliente activo                                                          Integer  5008           0                    1                                   1           1           0.9520912547528547      0.21357316632946227   1          1                                              2
+desconectado                                                            Integer  0              0                    0                                   1           1           0                       0                     0          0                                              1
+pendiente de cambio                                                     Integer  807            0                    1                                   1           1           0.15342205323193908     0.3603938495785344    0          0                                              2
+pendiente de desconectar                                                Integer  14             0                    1                                   1           1           0.0026615969581749092   0.05152196482867418   0          0                                              2
+pendiente de instalar                                                   Integer  96             0                    1                                   1           1           0.018250950570342143    0.13385758616388213   0          0                                              2
+pendiente de reconectar                                                 Integer  0              0                    0                                   1           1           0                       0                     0          0                                              1
+Country                                                                 Unicode                 -                    United States                       1           20                                                                   Spain                                          27
+Region                                                                  Unicode                 -                    Zurich                              1           31                                                                   Madrid, Comunidad de                           67
+City                                                                    Unicode                 -                    la Seu d'Urgell                     1           27                                                                   Madrid                                         429
+PrimaryHardwareType                                                     Unicode                 Desktop              Tablet                              0           12                                                                   Desktop                                        5
+OSName                                                                  Unicode                 Android              iOS                                 3           14                                                                   Windows 10                                     13
+BrowserName                                                             Unicode                 Android Browser      SeaMonkey                           0           15                                                                   Chrome                                         14
+Recommendation                                                          Integer  27480          0                    10                                  1           2           5.224334600760446       3.83656822381032      6          0                                              11
+pageName                                                                Unicode                 -                    mi vodafone:vodafone tv:resumen tv  1           69                                                                   mi vodafone:mis productos:producto contratado  39
+paginasenlavisita                                                       Integer  63864          2                    100                                 1           3           12.14144486692012       9.067289274887441     9          7                                              57
+platform                                                                Unicode                 -                    responsive                          1           10                                                                   estandar                                       3
+VERBATIM                                                                Unicode                 True                 True                                4           4                                                                    True                                           1
+NPS                                                                     Unicode                 Detractor            Promotor                            6           9                                                                    Detractor                                      3

@@ -328,8 +328,6 @@ echo 'SELECT "Date","userid(ow)(evar39)", count() as C FROM DataExtract GROUP BY
 
 
 ```bash
-cd ${HOME}/Daniel/TNPS/ && for USER_ID in $(sort -u ${HOME}/Daniel/TNPS/USER_ID.csv) ; do
-printf "USER_ID [ %s ]\n" "${USER_ID}"
 echo 'SELECT
 /* "CreationDate" AS DATE, */
 "ID_Client(prop39)" AS USER_ID,
@@ -354,7 +352,6 @@ WHERE USER_ID != "-"
 /**/
 /* AND "CreationDate" LIKE "2019/02/%" */
 /**/
-AND USER_ID = "'${USER_ID}'"
 GROUP BY
 /* DATE, */
 USER_ID,
@@ -371,8 +368,10 @@ USER_ID,
 VERBATIM,
 NPS
 /* ORDER BY C DESC */
-;' | sqlite3 -cmd ".headers ON" TNPS.2.db | csvformat --delimiter "|" --quoting 0 | ~/github/sieferos/wsl01x/scripts/fixdates.pl | tee ${HOME}/Daniel/TNPS/__idx/OW_eCare/"${USER_ID}".csv
-done
+;' | sqlite3 -cmd ".headers ON" TNPS.2.db | csvformat --delimiter "|" --quoting 0 | ~/github/sieferos/wsl01x/scripts/fixdates.pl | tee ${HOME}/Daniel/TNPS/__idx/OW_eCare.csv
+wc ${HOME}/Daniel/TNPS/__idx/OW_eCare.csv
+
+cd ${HOME}/Daniel/TNPS/__idx/ && xsv partition USER_ID OW_eCare OW_eCare.csv
 
 csvcut --names OW_eCare.201811.143911182.csv
 ```
@@ -408,7 +407,7 @@ OW_ECARE="${HOME}/Daniel/TNPS/__idx/OW_eCare/${USER_ID}.csv"
 DATAEXTRACT="${HOME}/Daniel/TNPS/__idx/DataExtract/${USER_ID}.PIVOT.csv"
 if [[ -e "${OW_ECARE}" && -s "${OW_ECARE}" && -e "${DATAEXTRACT}" ]] ; then
   # printf "\t(OK) [ O:%s | D:%s ]\n" "${OW_ECARE}" "${DATAEXTRACT}"
-  csvjoin --no-inference --columns "USER_ID" "${DATAEXTRACT}" "${OW_ECARE}" | tee "${HOME}/Daniel/TNPS/__idx/__JOIN__/${USER_ID}.csv"
+  xsv join --no-case "USER_ID" "${DATAEXTRACT}" "USER_ID" "${OW_ECARE}" | tee "${HOME}/Daniel/TNPS/__idx/__JOIN__/${USER_ID}.csv"
 else
   printf "\t(KO) [ O:%s | D:%s ]\n" "${OW_ECARE}" "${DATAEXTRACT}"
 fi
@@ -416,23 +415,17 @@ done
 ```
 
 ```bash
-mkdir -p ${HOME}/Daniel/TNPS/__idx/__XSV__/
-# cd ${HOME}/Daniel/TNPS/ && for USER_ID in 143911182 ; do
-
-cd ${HOME}/Daniel/TNPS/ && for USER_ID in $(sort -u ${HOME}/Daniel/TNPS/USER_ID.csv) ; do
-printf "JOIN: USER_ID [ %s ]\n" "${USER_ID}"
-OW_ECARE="${HOME}/Daniel/TNPS/__idx/OW_eCare/${USER_ID}.csv"
-# DATAEXTRACT="${HOME}/Daniel/TNPS/__idx/DataExtract/${USER_ID}.csv"
-DATAEXTRACT="${HOME}/Daniel/TNPS/__idx/DataExtract/${USER_ID}.PIVOT.csv"
-if [[ -e "${OW_ECARE}" && -s "${OW_ECARE}" && -e "${DATAEXTRACT}" ]] ; then
-  # printf "\t(OK) [ O:%s | D:%s ]\n" "${OW_ECARE}" "${DATAEXTRACT}"
-  xsv join --no-case "USER_ID" "${DATAEXTRACT}" "USER_ID" "${OW_ECARE}" | tee "${HOME}/Daniel/TNPS/__idx/__XSV__/${USER_ID}.csv"
-else
-  printf "\t(KO) [ O:%s | D:%s ]\n" "${OW_ECARE}" "${DATAEXTRACT}"
-fi
-done
+cd ${HOME}/Daniel/TNPS/ && csvstack __idx/__JOIN__/* | csvformat --quoting 0 | tee ${HOME}/github/sieferos/wsl01x/result/DataExtract-OW_eCare.csv
 ```
 
 ```bash
-cd ${HOME}/Daniel/TNPS/ && csvstack __idx/__JOIN__/* | csvformat --quoting 0 | tee DataExtract-OW_eCare.JOIN.csv && wc DataExtract-OW_eCare.JOIN.csv
+cd ${HOME}/github/sieferos/wsl01x/result/ && csv2xlsx -infile DataExtract-OW_eCare.csv -outfile DataExtract-OW_eCare.xlsx
+```
+
+```bash
+xsv stats --everything ${HOME}/github/sieferos/wsl01x/result/DataExtract-OW_eCare.csv | xsv table | tee ${HOME}/github/sieferos/wsl01x/result/DataExtract-OW_eCare.stats.txt
+```
+
+```bash
+xsv frequency ${HOME}/github/sieferos/wsl01x/result/DataExtract-OW_eCare.csv | xsv table | tee ${HOME}/github/sieferos/wsl01x/result/DataExtract-OW_eCare.frequency.txt
 ```
