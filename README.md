@@ -44,6 +44,83 @@ iconv -c -f UTF-8 -t ISO-8859-1//IGNORE ../Comportamiento\ Adobe\ eCare\ -\ WEB/
 
 ```bash
 cd ${HOME}/Daniel/TNPS/
+xsv headers --just-names --intersect Archivos/*.csv | sort
+
+cd ${HOME}/Daniel/TNPS/ && rm -f DataExtract.csv
+for W in $(ls -1 ${HOME}/Daniel/Archivos/*.csv | grep Medallia_Usu_) ; do
+xsv select \
+"Date",\
+"GeoSegmentation Cities",\
+"GeoSegmentation Countries",\
+"Mobile Device Type",\
+"Mobile Devices",\
+"Mobile Operating System",\
+"Mobile Screen Size",\
+"Monitor Resolutions",\
+"ZIP/Postal Codes",\
+"client debt (prop18)",\
+"client sba (prop17)",\
+"client status (prop15)",\
+"current crm (prop12)",\
+"current service (ow) (prop40)",\
+"error cause (prop30)",\
+"error code (prop35)",\
+"error page (prop29)",\
+"hh:mm (prop54)",\
+"invoice account (ow) (prop72)",\
+"invoice cycle (ow) (prop62)",\
+"invoice identifier (ow) (prop45)",\
+"invoice type (ow) (prop46)",\
+"language (prop34)",\
+"link type (prop59)",\
+"login profile (prop58)",\
+"login type (prop14)",\
+"more megas (prop31)",\
+"navigation speed (prop24)",\
+"new/repeat (prop21)",\
+"page display mode (prop11)",\
+"permanence end date (prop55)",\
+"prepaid/postpaid (prop23)",\
+"purchased packages (prop57)",\
+"service status (prop52)",\
+"service type (prop36)",\
+"subsection 1 (prop1)",\
+"subsection 2 (prop2)",\
+"subsection 3 (prop5)",\
+"subsection 4 (prop27)",\
+"subsection 5 (prop9)",\
+"url (evar7)",\
+"user id (ow) (evar39)",\
+"visitor status (prop4)" "${W}" >> DataExtract.csv
+done
+wc DataExtract.csv
+
+
+cd ${HOME}/Daniel/TNPS/ && rm -f DataExtract.csv
+for W in $(ls -1 ${HOME}/Daniel/Archivos/*.csv | grep DataExtract) ; do
+xsv select \
+"Date",\
+"user id (ow) (evar39)",\
+"subsection 1 (prop1)",\
+"subsection 2 (prop2)",\
+"visitor status (prop4)",\
+"client status (prop15)",\
+"client debt (prop18)",\
+"prepaid/postpaid (prop23)",\
+"navigation speed (prop24)",\
+"purchased packages (prop57)",\
+"login profile (prop58)",\
+"error cause (prop30)" \
+"${W}" >> DataExtract.csv
+done
+wc DataExtract.csv
+
+
+```
+
+
+```bash
+cd ${HOME}/Daniel/TNPS/
 PYTHONIOENCODING=utf-8 csvsql --db sqlite:///NPS --tables OW_eCare --insert OW-eCare.csv --overwrite && echo ".schema OW_eCare" | sqlite3 TNPS.db
 PYTHONIOENCODING=utf-8 csvsql --db sqlite:///NPS --tables DataExtract --insert DataExtract_201811.csv --overwrite && echo ".schema DataExtract" | sqlite3 TNPS.db
 ```
